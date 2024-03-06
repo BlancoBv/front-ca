@@ -17,7 +17,15 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+    <header>
+      <h1>
+        header Piola
+      </h1>
+    </header>
 		<slot />
+    <footer>
+      Footer piola
+    </footer>
 	</body>
 </html>
 <style is:global>
@@ -48,4 +56,20 @@ const { title } = Astro.props;
 			Courier New,
 			monospace;
 	}
+  body{
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+
+  header{
+    height: 20%;
+    background-color: #253b80;
+    color: white;
+  }
+  footer{
+    height: 300px;
+    background-color: #212327;
+    color: white;
+  }
 </style>

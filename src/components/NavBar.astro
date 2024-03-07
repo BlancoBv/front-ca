@@ -1,0 +1,23 @@
+---
+const { pathname } = Astro.url;
+
+console.log(pathname);
+---
+
+<nav class="flex-grow flex flex-row justify-evenly z-50">
+  <a
+    href="/"
+    class:list={[
+      "border-blue-600",
+      { "border-b-2 text-blue-600": pathname === "/" },
+    ]}>Inicio</a
+  >
+  <a href="#">Dropdown</a>
+  <a href="#">Dropdown</a>
+  <a href="#">Dropdown</a>
+  <a href="#">Dropdown</a>
+  <a href="#">Dropdown</a>
+  <a href="#">Dropdown</a>
+  <a href="#">Dropdown</a>
+  <a href="#">Dropdown</a>
+</nav>

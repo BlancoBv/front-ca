@@ -27,7 +27,7 @@ const { title } = Astro.props;
         <a href="https://rios.tecnm.mx">Mi TecNM Ríos</a>
       </nav>
     </header>
-    <div class="sticky top-0 p-2 bg-white h-32 flex flex-col">
+    <div class="sticky top-0 p-2 bg-white h-32 flex flex-col z-50">
       <img src="/logoCA.png" alt="Logo Cuerpo Academico" width="200px" />
       <NavBar />
     </div>
@@ -44,11 +44,6 @@ const { title } = Astro.props;
           rgb(var(--accent-light)) 30%,
           white 60%
         );
-      }
-      html {
-        font-family: system-ui, sans-serif;
-        background: #13151a;
-        background-size: 224px;
       }
       code {
         font-family:
@@ -71,9 +66,6 @@ const { title } = Astro.props;
         height: 300px;
         background-color: #212327;
         color: white;
-      }
-      a:target {
-        background-color: aqua;
       }
     </style>
   </body>

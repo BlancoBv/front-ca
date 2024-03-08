@@ -1,9 +1,9 @@
 ---
-import Menudropdown from '../components/Menudropdown.astro'
+import Menudropdown from "../components/Menudropdown.astro";
 const { pathname } = Astro.url;
 ---
 
-<nav class="flex-grow flex flex-row justify-evenly z-50">
+<nav class="flex-grow flex flex-row justify-evenly">
   <a
     href="/"
     class:list={[
@@ -11,11 +11,10 @@ const { pathname } = Astro.url;
       { "border-b-2 text-blue-600": pathname === "/" },
     ]}>Inicio</a
   >
-  <Menudropdown/>
-  <Menudropdown/>
-  <Menudropdown/>
-  <Menudropdown/>
-  <Menudropdown/>
-  <Menudropdown/>
-  
+  <Menudropdown />
+  <Menudropdown />
+  <Menudropdown />
+  <Menudropdown />
+  <Menudropdown />
+  <Menudropdown />
 </nav>

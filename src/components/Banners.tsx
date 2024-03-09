@@ -14,8 +14,11 @@ const Banners: FC = () => {
     keys: null,
     from: { opacity: 1, transform: "translate3d(100%,0,-100px)" },
     enter: { opacity: 1, transform: "translate3d(0%,0,0px)" },
-    leave: { opacity: 1, transform: "translate3d(-100%,0,-100px)" },
+    leave: { opacity: 0 },
     exitBeforeEnter: true,
+    config: {
+      duration: 500,
+    },
   });
   const previousCard = () => {
     setIndex((prev) => {

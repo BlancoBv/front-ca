@@ -3,11 +3,10 @@ import regExp from "../assets/regExp";
 interface Props {
   name: string;
   items: { title: string; to: string }[];
+  test: string;
 }
 const { pathname } = Astro.url;
-const { name, items } = Astro.props;
-
-console.log(pathname);
+const { name, items, test } = Astro.props;
 ---
 
 <div class="relative inline-block text-left group">
@@ -15,7 +14,7 @@ console.log(pathname);
     class="inline-flex items-center justify-center px-4 text-black transition duration-150 ease-in-out"
     class:list={[
       "border-blue-600",
-      { "border-b-2 text-blue-600": regExp("cuerpoacademico", pathname) },
+      { "border-b-2 text-blue-600": regExp(test, pathname) },
     ]}
   >
     {name}

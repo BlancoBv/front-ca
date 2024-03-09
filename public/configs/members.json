@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "nombre": "Dr. Fernando Pech May",
+    "puesto": "Profesor-investigador",
+    "img": "/img/miembros/2.jpg",
+    "resumen": "Profesor investigador del Instituto Tecnológico Superior de los Ríos. Realizó sus estudios de Maestría en el Centro de Investigación y estudios Avanzados del IPN (CINVESTAV) en el área de Inteligencia Artificial. Se especializó en Web Semántica en la Universidad de Chile. Finalizó su Doctorado en Ciencias de la Computación en el Centro Nacional de Investigación y Desarrollo Tecnológico.",
+    "bio": "",
+    "proyectos": [],
+    "publicaciones": [],
+    "contacto": []
+  },
+  {
+    "id": 2,
+    "nombre": "MC. Edna Mariel Mil Chontal",
+    "puesto": "Profesora-investigadora",
+    "resumen": "Cuenta con una Maestría en Ciencias en la Computación por el Centro de Investigación y de Estudios Avanzados del IPN, campus Tamaulipas, una Licenciatura en Computación por la Universidad Autónoma de Tabasco.",
+    "bio": "Es profesora e Investigadora del Tecnológico Nacional de México, Campus Los Ríos, pertenece al Cuerpo Académico “Cómputo Distribuido” en el mismo Instituto desde el 2012, en donde ha participado en diversos proyectos de Investigación Científicos. Sus áreas de interés son: Sistemas Distribuidos, Procesamiento de Lenguaje Natural y Redes de Próxima Generación. Actualmente es miembro del Sistema Estatal de Investigadores. ",
+    "proyectos": [],
+    "publicaciones": [],
+    "contacto": []
+  },
+  {
+    "id": 3,
+    "nombre": "MATI. Jorge Magaña Govea",
+    "puesto": "Profesor-investigador",
+    "resumen": "Maestro en Administración de Tecnologías de la Información por la Universidad Juárez Autónoma de Tabasco e Ingeniero en Sistemas Computacionales por el Instituto Tenológico de Mérida. Profesor Investigador de la carrera de Ingeniería en Sistemas Computacionales del Instituto Tecnológico Superior de los Ríos en las líneas de investigación de Bases de datos y Cómputo Distribuido. ",
+    "bio": "Miembro del Cuerpo Académico de Cómputo Distribuido con estatus en formación. Ha participado en proyectos de Investigación con financiamiento PRODEP orientadas al desarrollo de Ontologías para el sector Agrícola. Sus intereses de investigación incluyen la Ingeniería de Software y la Web Semántica. Es miembro del Padrón Estatal de Investigadores de Tabasco. Se ha involucrado en proyectos de carácter social en la ciudad de Bernkastel Kues, Alemania.",
+    "proyectos": [],
+    "publicaciones": [],
+    "contacto": []
+  },
+  {
+    "id": 4,
+    "nombre": "Ing. Luis Antonio Lopez Gomez",
+    "puesto": "Profesor-investigador",
+    "resumen": "Profesor-investigador del TecNM Campus de los Ríos. Miembro del cuerpo académico computo distribuido. Acredita numerosas contribuciones a congresos y participaciones el desarrollo de proyectos de investigación de PRODEP y TecNM. Publicación de 10 artículos nacionales e internacionales, artículos indexados en revistasde prestigio. ",
+    "bio": "",
+    "proyectos": [],
+    "publicaciones": [],
+    "contacto": []
+  }
+]

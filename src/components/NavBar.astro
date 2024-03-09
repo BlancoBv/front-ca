@@ -3,6 +3,7 @@ interface Props {
   dropwdownItems: {
     name: string;
     items: { title: string; to: string }[];
+    test: string;
   }[];
 }
 import Menudropdown from "../components/Menudropdown.astro";
@@ -20,7 +21,7 @@ const { dropwdownItems } = Astro.props;
   >
   {
     dropwdownItems.map((value) => (
-      <Menudropdown name={value.name} items={value.items} />
+      <Menudropdown name={value.name} items={value.items} test={value.test} />
     ))
   }
 </nav>

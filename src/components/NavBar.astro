@@ -1,6 +1,13 @@
 ---
+interface Props {
+  dropwdownItems: {
+    name: string;
+    items: { title: string; to: string }[];
+  }[];
+}
 import Menudropdown from "../components/Menudropdown.astro";
 const { pathname } = Astro.url;
+const { dropwdownItems } = Astro.props;
 ---
 
 <nav class="flex-grow flex flex-row justify-evenly">
@@ -11,10 +18,9 @@ const { pathname } = Astro.url;
       { "border-b-2 text-blue-600": pathname === "/" },
     ]}>Inicio</a
   >
-  <Menudropdown />
-  <Menudropdown />
-  <Menudropdown />
-  <Menudropdown />
-  <Menudropdown />
-  <Menudropdown />
+  {
+    dropwdownItems.map((value) => (
+      <Menudropdown name={value.name} items={value.items} />
+    ))
+  }
 </nav>

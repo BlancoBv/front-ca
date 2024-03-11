@@ -39,17 +39,15 @@ const Banners: FC = () => {
 
   return (
     <section className="aspect-video relative overflow-hidden w-full h-1/5  sm:h-3/4">
-      {/* {!isPending &&
-        data.map((el: any, key) => (
-         
-        ))} */}
-
       {!isPending &&
         transitions((style, index) => (
           <animated.div style={style} className="z-0 h-full w-full">
             <Img source={data[index]["url"]} alt="ola" />
           </animated.div>
         ))}
+      {isPending && (
+        <div className="animate-pulse w-full h-full bg-slate-700" />
+      )}
 
       <button
         className="absolute origin-center top-2/4 right-0"

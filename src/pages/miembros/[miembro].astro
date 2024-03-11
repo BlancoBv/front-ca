@@ -1,11 +1,17 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import type { GetStaticPaths } from "astro";
+import Layout, { urlMain } from "../../layouts/Layout.astro";
 import MiembroPage from "../../components/MiembroPage";
-import { log } from "astro/dist/core/logger/core";
+import members from "../../../public/configs/members.json";
+
+export const getStaticPaths = (async () => {
+  return members.map((el: { id: number }) => ({
+    params: { miembro: String(el.id) },
+  }));
+}) satisfies GetStaticPaths;
 const { miembro } = Astro.params;
-export const prerender = false;
 ---
 
-<Layout title="Miembro 1">
+<Layout title=`Miembro ${miembro}`>
   <MiembroPage id={miembro} client:visible />
 </Layout>

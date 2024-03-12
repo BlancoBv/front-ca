@@ -54,7 +54,7 @@ const Caruselpersonal: FC = () => {
             style={style}
             className="z-0 h-full flex flex-col place-content-center items-center"
           >
-            <p className="w-1/2 my-3 text-center text-xl">
+            <p className="w-1/2 my-3 text-center text-xl font-sans">
               {data[index]["resumen"]}
             </p>
 

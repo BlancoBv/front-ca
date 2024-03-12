@@ -1,10 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Banners from "../components/Banners";
-import Caruselpersonal from "../components/Caruselpersonal.astro"
+import Caruselpersonal from "../components/Caruselpersonal"
 ---
 
 <Layout title="Welcome to Astro.">
   <Banners client:visible />
-  <Caruselpersonal />
+  <Caruselpersonal client:visible/>
 </Layout>
+../components/Caruselpersonal.tsx

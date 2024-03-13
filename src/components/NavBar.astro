@@ -24,4 +24,12 @@ const { dropwdownItems } = Astro.props;
       <Menudropdown name={value.name} items={value.items} test={value.test} />
     ))
   }
+  <a
+    href="/login"
+    class:list={[
+      "border-blue-600",
+      { "border-b-2 text-blue-600": pathname === "/login" },
+    ]}
+    >Iniciar Sesión
+  </a>
 </nav>

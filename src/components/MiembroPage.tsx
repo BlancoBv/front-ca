@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import useFetchData from "../hooks/useFetchData";
 import Img from "./Img";
+import Tablespersonal from "./Tablespersonal.astro";
 
 const MiembroPage: FC<{ id: string | undefined }> = ({ id }) => {
   const { data, isPending, error } = useFetchData("/configs/members.json");
@@ -23,8 +24,14 @@ const Success: FC<{ data: any; id: any }> = ({ data, id }) => {
   console.log(filteredMember);
   return (
     <>
-      <div className="flex w-full h-28 items-center">
+      <div className="flex w-full h-28 items-center justify-between">
         <h1>{filteredMember.nombre}</h1>
+        <ul className="list-none flex">
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>Lider CA</li>
+        </ul>
       </div>
       <div className="flex">
         <Img

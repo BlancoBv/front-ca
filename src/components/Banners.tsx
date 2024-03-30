@@ -1,11 +1,11 @@
 import React, { type FC, useEffect, useState } from "react";
-import useFetchData from "../hooks/useFetchData";
+import useGetData from "../hooks/useGetData";
 import Img from "./Img";
 import { useSpringRef, useTransition, animated } from "@react-spring/web";
 
 const Banners: FC = () => {
   const [index, setIndex] = useState<number>(0);
-  const { data, isPending, error } = useFetchData("/configs/banners.json");
+  const { data, isPending, error } = useGetData("/banners");
 
   const ref = useSpringRef();
 

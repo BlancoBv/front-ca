@@ -7,8 +7,19 @@ interface Props {
   }[];
 }
 import Menudropdown from "../components/Menudropdown.astro";
-const { pathname } = Astro.url;
-const { dropwdownItems } = Astro.props;
+const { pathname, origin } = Astro.url;
+const response = await fetch(`${origin}/api/menuAzul`);
+const data: {
+  id: number;
+  nombre: string;
+  url: string;
+  SubMenus: {
+    id: number;
+    nombre: string;
+    menu: number;
+    url: string;
+  }[];
+}[] = await response.json();
 ---
 
 <nav class="flex-grow flex flex-row justify-evenly">
@@ -20,9 +31,26 @@ const { dropwdownItems } = Astro.props;
     ]}>Inicio</a
   >
   {
-    dropwdownItems.map((value) => (
-      <Menudropdown name={value.name} items={value.items} test={value.test} />
-    ))
+    data.map((value) =>
+      value.SubMenus.length > 0 ? (
+        <Menudropdown
+          name={value.nombre}
+          items={value.SubMenus}
+          test={value.url}
+          baseUrl={value.url}
+        />
+      ) : (
+        <a
+          href={`/${value.url}`}
+          class:list={[
+            "border-blue-600",
+            { "border-b-2 text-blue-600": pathname === value.url },
+          ]}
+        >
+          {value.nombre}
+        </a>
+      )
+    )
   }
   <a
     href="/login"

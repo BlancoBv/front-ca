@@ -10,6 +10,6 @@ export default defineConfig({
   output: "server",
   integrations: [tailwind(), react(), db()],
   adapter: node({
-    mode: "standalone"
-  })
+    mode: "standalone",
+  }),
 });

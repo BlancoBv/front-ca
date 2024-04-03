@@ -4,6 +4,7 @@ import {
   MenuAzul,
   MenuSuperior,
   Miembros,
+  RedesSociales,
   SubMenuAzul,
 } from "astro:db";
 
@@ -146,5 +147,12 @@ export default async function seed() {
       description:
         "Desarrollar un cuerpo académico para el desarrollo de proyectos de investigación, dirección de tesís, desarrollo de aplicación de sistema distribuido, así como el mejoramiento de los planes de estudios de la carrera.",
     },
+  ]);
+
+  await db.insert(RedesSociales).values([
+    { nombre: "Facebook", sigla: "Fb" },
+    { nombre: "Instagram", sigla: "Ing" },
+    { nombre: "Tiktok", sigla: "Tk" },
+    { nombre: "LinkedIn", sigla: "Li" },
   ]);
 }

@@ -59,6 +59,15 @@ const MenuSuperior = defineTable({
   },
 });
 
+const RedesSociales = defineTable({
+  columns: {
+    id: column.number({ primaryKey: true }),
+    nombre: column.text(),
+    sigla: column.text(),
+    createdAt: column.date({ default: NOW }),
+  },
+});
+
 const Usuario = defineTable({
   columns: {
     user: column.text({ primaryKey: true }),
@@ -70,5 +79,13 @@ const Usuario = defineTable({
 });
 
 export default defineDb({
-  tables: { Miembros, Banners, Usuario, MenuAzul, SubMenuAzul, MenuSuperior },
+  tables: {
+    Miembros,
+    Banners,
+    Usuario,
+    MenuAzul,
+    SubMenuAzul,
+    MenuSuperior,
+    RedesSociales,
+  },
 });

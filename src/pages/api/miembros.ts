@@ -1,6 +1,7 @@
+import type { APIRoute } from "astro";
 import { db, Miembros } from "astro:db";
 
-export async function GET() {
+export const GET: APIRoute = async () => {
   const res = await db.select().from(Miembros);
 
   if (!res) {
@@ -16,4 +17,28 @@ export async function GET() {
       "Content-Type": "application/json",
     },
   });
-}
+};
+
+export const POST: APIRoute = async ({ request }) => {
+  const body = await request.json();
+
+  const { nombre, apepat, apemat, puesto, grado, resumen, bio, contacto } =
+    body;
+
+  await db.insert(Miembros).values({
+    nombre,
+    apepat,
+    apemat,
+    puesto,
+    grado,
+    resumen,
+    bio,
+    contacto,
+  });
+
+  return new Response(
+    JSON.stringify({
+      message: "Se guardo correctamente",
+    })
+  );
+};

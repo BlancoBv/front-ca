@@ -1,5 +1,7 @@
 import { db, Banners } from "astro:db";
 
+export const prerender = false;
+
 export async function GET() {
   const res = await db.select().from(Banners);
 

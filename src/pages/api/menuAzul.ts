@@ -1,5 +1,7 @@
 import { db, eq, MenuAzul, SubMenuAzul } from "astro:db";
 
+export const prerender = false;
+
 export async function GET() {
   const res = await db.selectDistinct().from(MenuAzul);
   const data = [];

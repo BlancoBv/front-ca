@@ -1,5 +1,8 @@
 import { db, RedesSociales } from "astro:db";
 
+export const prerender = false;
+
+
 export async function GET() {
   const res = await db.select().from(RedesSociales);
 

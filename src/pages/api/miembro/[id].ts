@@ -2,6 +2,8 @@
 
 import { db, eq, Miembros } from "astro:db";
 
+export const prerender = false;
+
 export async function GET({ params }: any) {
   const id = params.id;
   console.log(id);

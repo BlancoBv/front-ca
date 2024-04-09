@@ -1,10 +1,10 @@
 ---
 interface Props {
-  dropwdownItems: {
+ /*  dropwdownItems: {
     name: string;
     items: { title: string; to: string }[];
     test: string;
-  }[];
+  }[]; */
 }
 import Menudropdown from "../components/Menudropdown.astro";
 const { pathname, origin } = Astro.url;
@@ -20,6 +20,11 @@ const data: {
     url: string;
   }[];
 }[] = await response.json();
+export const prerender = false;
+
+console.log(pathname);
+
+
 ---
 
 <nav class="flex-grow flex flex-row justify-evenly">

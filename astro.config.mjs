@@ -7,7 +7,7 @@ import db from "@astrojs/db";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
+  output: "hybrid",
   integrations: [tailwind(), react(), db()],
   adapter: node({
     mode: "standalone",

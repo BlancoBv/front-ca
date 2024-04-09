@@ -1,6 +1,8 @@
 import type { APIRoute } from "astro";
 import { db, Miembros } from "astro:db";
 
+export const prerender = false;
+
 export const GET: APIRoute = async () => {
   const res = await db.select().from(Miembros);
 

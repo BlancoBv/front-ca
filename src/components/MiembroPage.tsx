@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import useFetchData from "../hooks/useFetchData";
 import Img from "./Img";
-import Tablespersonal from "./Tablespersonal.astro";
+import Tablespersonal from "./Tablespersonal";
 
 const MiembroPage: FC<{ id: string | undefined }> = ({ id }) => {
   const { data, isPending, error } = useFetchData("/configs/members.json");
@@ -33,13 +33,13 @@ const Success: FC<{ data: any; id: any }> = ({ data, id }) => {
           <li>Lider CA</li>
         </ul>
       </div>
-      <div className="flex">
+      <div className="flex-wrap">
         <Img
           source={filteredMember.img}
           alt={filteredMember.nombre}
           styles="size-40 rounded-lg"
         />
-        <div className="flex flex-col w-3/4 pl-8 space-y-4">
+        <div className="flex flex-col min-w-24 pl-8 space-y-4">
           <div className="flex flex-col border-b-2 border-b-gray-300 py-2">
             <h2 className="">{filteredMember.nombre}</h2>
             <h3 className="">{filteredMember.puesto}</h3>

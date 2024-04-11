@@ -3,7 +3,7 @@ import type { GetStaticPaths } from "astro";
 import Layout, { urlMain } from "../../layouts/Layout.astro";
 import MiembroPage from "../../components/MiembroPage";
 import members from "../../../public/configs/members.json";
-import Tablespersonal from "../../components/Tablespersonal.astro";
+import Tablespersonal from "./../../components/Tablespersonal";
 
 export const getStaticPaths = (async () => {
   return members.map((el: { id: number }) => ({

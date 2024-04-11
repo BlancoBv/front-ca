@@ -130,21 +130,21 @@ export default async function seed() {
   await db.insert(Banners).values([
     {
       id: 1,
-      url: "/img/banners/1.jpg",
+      img: "img/banners/1.jpg",
       title: "Mision",
       description:
         "Contribuir con el mejoramiento de la formación académica de los estudiantes de la carrera de Ingeniería en Sistemas computacionales del Instituto tecnológico Superior de los Ríos.",
     },
     {
       id: 2,
-      url: "/img/banners/2.jpg",
+      img: "img/banners/2.jpg",
       title: "Vision",
       description:
         "Lograr la consolidación del cuerpo académico a través del incremento de nuestra producción académica, investigación con reconocimiento nacional e internacional.",
     },
     {
       id: 3,
-      url: "/img/banners/3.jpg",
+      img: "img/banners/3.jpg",
       title: "Objetivo",
       description:
         "Desarrollar un cuerpo académico para el desarrollo de proyectos de investigación, dirección de tesís, desarrollo de aplicación de sistema distribuido, así como el mejoramiento de los planes de estudios de la carrera.",

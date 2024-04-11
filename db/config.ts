@@ -24,7 +24,7 @@ const Miembros = defineTable({
 const Banners = defineTable({
   columns: {
     id: column.number({ primaryKey: true }),
-    url: column.text(),
+    img: column.text({ default: "img/banners/2.jpg" }),
     title: column.text({ optional: true }),
     description: column.text({ optional: true }),
     createdAt: column.date({ default: NOW }),

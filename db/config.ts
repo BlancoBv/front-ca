@@ -78,6 +78,40 @@ const Usuario = defineTable({
   },
 });
 
+const Proyectos = defineTable({
+  columns: {
+    id: column.number({ primaryKey: true }),
+    clave: column.text({ optional: true }),
+    proyecto: column.text(),
+    duracion: column.text(),
+    director: column.text(),
+    colaboradores: column.text(),
+    tipo: column.text(),
+    vigencia: column.json({
+      default: { fechaI: "", fechaF: "" },
+      optional: true,
+    }),
+    status: column.text({ default: "No-terminado" }),
+    descripcion: column.text(),
+    url: column.text(),
+    createdAt: column.date({ default: NOW }),
+  },
+});
+
+const Publicaciones = defineTable({
+  columns: {
+    id: column.number({ primaryKey: true }),
+    ISSN: column.text({ optional: true }),
+    articulo: column.text(),
+    autores: column.text(),
+    tipo: column.text(),
+    anio: column.text(),
+    descripcion: column.text(),
+    url: column.text(),
+    createdAt: column.date({ default: NOW }),
+  },
+});
+
 export default defineDb({
   tables: {
     Miembros,
@@ -87,5 +121,7 @@ export default defineDb({
     SubMenuAzul,
     MenuSuperior,
     RedesSociales,
+    Proyectos,
+    Publicaciones,
   },
 });

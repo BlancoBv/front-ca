@@ -1,5 +1,6 @@
 // import { getProduct } from "../db";
 
+import type { APIRoute } from "astro";
 import { db, eq, Miembros } from "astro:db";
 
 export const prerender = false;
@@ -27,3 +28,44 @@ export async function GET({ params }: any) {
     },
   });
 }
+
+export const PUT: APIRoute = async ({ request, params }) => {
+  const body = await request.json();
+
+  const { id } = params;
+
+  const { nombre, apepat, apemat, puesto, grado, resumen, bio, contacto } =
+    body;
+
+  await db
+    .update(Miembros)
+    .set({
+      nombre,
+      apepat,
+      apemat,
+      puesto,
+      grado,
+      resumen,
+      bio,
+      contacto,
+    })
+    .where(eq(Miembros.id, Number(id)));
+
+  return new Response(
+    JSON.stringify({
+      message: "Se guardo correctamente",
+    })
+  );
+};
+
+export const DELETE: APIRoute = async ({ params }) => {
+  const id = params.id;
+
+  await db.delete(Miembros).where(eq(Miembros.id, Number(id)));
+
+  return new Response(
+    JSON.stringify({
+      message: "Se guardo correctamente",
+    })
+  );
+};

@@ -6,6 +6,8 @@ import {
   Miembros,
   RedesSociales,
   SubMenuAzul,
+  Proyectos,
+  Publicaciones,
 } from "astro:db";
 
 //Todos estos datos son de prueba, los datos reales son cuando el proyecto se compila y se conecta a astro studio db con mi usuario de github jlcabrera02
@@ -154,5 +156,120 @@ export default async function seed() {
     { nombre: "Instagram", sigla: "Ing" },
     { nombre: "Tiktok", sigla: "Tk" },
     { nombre: "LinkedIn", sigla: "Li" },
+  ]);
+
+  await db.insert(Publicaciones).values([
+    {
+      ISSN: null,
+      articulo:
+        "Analisis de mineria de datos y Machine Learning en Marketing Digital",
+      autores:
+        "Pedro Arcos Mendez, Edna M, Luis Antonio Lopez Gomez, Fernando Pech May",
+      tipo: "Memorias en extenso",
+      anio: "2019",
+      descripcion: "breve",
+      url: "https://repositorio.esan.edu.pe/items/70ee69e1-03af-4314-9adb-b902c1c45461",
+    },
+    {
+      ISSN: "18704069",
+      articulo:
+        "Land use classication from Sentinel-2 imagery and Google Earth Engine",
+      autores:
+        "Fernando Pech May, Honorio Guadalupe Sanchez Jacinto, Jorge Magaña Govea y german Rios Toledo",
+      tipo: "Indexado",
+      anio: "2020",
+      descripcion: "Indexado",
+      url: "https://repositorio.esan.edu.pe/items/70ee69e1-03af-4314-9adb-b902c1c45461",
+    },
+    {
+      ISSN: "1870-4069",
+      articulo:
+        "Análisis de las emisiones de NO2, durante la jornada Nacioanl de sana distancia, mediante imagenes satelitales",
+      autores:
+        "Sánchez Hernandez, J.V., Pech-May, F., vera-priego, F., & de la O hidalgo, D.S",
+      tipo: "Arbitrado",
+      anio: "2021",
+      descripcion: "breve",
+      url: "https://repositorio.esan.edu.pe/items/70ee69e1-03af-4314-9adb-b902c1c45461",
+    },
+    {
+      ISSN: "null",
+      articulo:
+        "Análisis de las emisiones de NO2, durante la jornada Nacioanl de sana distancia, mediante imagenes satelitales",
+      autores:
+        "Sánchez Hernandez, J.V., Pech-May, F., vera-priego, F., & de la O hidalgo, D.S",
+      tipo: "Arbitrado",
+      anio: "2021",
+      descripcion: "breve",
+      url: "https://repositorio.esan.edu.pe/items/70ee69e1-03af-4314-9adb-b902c1c45461",
+    },
+  ]);
+
+  await db.insert(Proyectos).values([
+    {
+      clave: null,
+      proyecto: "Integridad de los enlaces de datos en la web semantica",
+      duracion: "12 de agosto 2013 al 30 de septiembre del 2016",
+      director: "Dr. Fernando Pech May",
+      colaboradores:
+        "Jorge Magaña Govea, Luis Antonio López Gómez, Manuel Segovia López, Luis Alberto de la Cruz Diaz, Edna Mariel Milchontal",
+      tipo: "Externo",
+      status: "no-terminado",
+      vigencia: {
+        fechaI: "2023-12-12",
+        fechaF: "2024-12-12",
+      },
+      descripcion: "breve",
+      url: "https://repositorio.esan.edu.pe/items/70ee69e1-03af-4314-9adb-b902c1c45461",
+    },
+    {
+      clave: "5667.1 9-P",
+      proyecto:
+        "Análisis y desarrollo de ontología para el fortalecimiento del sector agricola",
+      duracion: "01 de enero al 37 de de diciembre del 2019",
+      director: "Dr Fernando Pech May",
+      colaboradores:
+        "Manuel Segovia López, Edna Mariel Mil Chontal, Jorge Magaña Govea, Luis Antonio López Gómez",
+      tipo: "Externo",
+      status: "no-terminado",
+      vigencia: {
+        fechaI: "2023-12-12",
+        fechaF: "2024-12-12",
+      },
+      descripcion: "breve",
+      url: "https://repositorio.esan.edu.pe/items/70ee69e1-03af-4314-9adb-b902c1c45461",
+    },
+    {
+      clave: "SPI-04-2021",
+      proyecto:
+        "Detección de inundaciones mediante imágenes multiespectrales y aprendizaje profundo.",
+      duracion: "08 de Febrero de 2021 al 18 de Marzo de 2022",
+      director: "Dr. Fernando Pech May",
+      colaboradores: "Ing. Luis Antonio López Gómez, MATI. Jorge Magaña Govea",
+      tipo: "Interno",
+      status: "terminado",
+      vigencia: {
+        fechaI: "2023-12-12",
+        fechaF: "2024-12-12",
+      },
+      descripcion: "breve",
+      url: "https://repositorio.esan.edu.pe/items/70ee69e1-03af-4314-9adb-b902c1c45461",
+    },
+    {
+      clave: "SPI-03-2020",
+      proyecto:
+        "Análisis de algoritmo de similitud semántica mediante el uso de ontologías.",
+      duracion: "Enero 2019 - Diciembre 2020",
+      director: "Dr. Fernando Pech May",
+      colaboradores: "Ing. Luis Antonio López Gómez",
+      tipo: "Interno",
+      status: "terminado",
+      vigencia: {
+        fechaI: "2023-12-12",
+        fechaF: "2024-12-12",
+      },
+      descripcion: "breve",
+      url: "https://repositorio.esan.edu.pe/items/70ee69e1-03af-4314-9adb-b902c1c45461",
+    },
   ]);
 }

@@ -1,10 +1,10 @@
 import type { APIRoute } from "astro";
-import { db, MenuSuperior } from "astro:db";
+import { db, eq, SubMenuAzul } from "astro:db";
 
 export const prerender = false;
 
-export async function GET() {
-  const res = await db.select().from(MenuSuperior);
+export const GET: APIRoute = async () => {
+  const res = await db.selectDistinct().from(SubMenuAzul);
 
   if (!res) {
     return new Response(null, {
@@ -19,14 +19,14 @@ export async function GET() {
       "Content-Type": "application/json",
     },
   });
-}
+};
 
 export const POST: APIRoute = async ({ request }) => {
   const body = await request.json();
 
-  const { nombre, enlace } = body;
+  const { nombre, url, menu } = body;
 
-  const res = await db.insert(MenuSuperior).values({ nombre, enlace });
+  const res = await db.insert(SubMenuAzul).values({ nombre, url, menu });
 
   return new Response(JSON.stringify(res), {
     status: 200,

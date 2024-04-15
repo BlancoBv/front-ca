@@ -1,3 +1,4 @@
+import type { APIRoute } from "astro";
 import { db, eq, MenuAzul, SubMenuAzul } from "astro:db";
 
 export const prerender = false;
@@ -27,3 +28,18 @@ export async function GET() {
     },
   });
 }
+
+export const POST: APIRoute = async ({ request }) => {
+  const body = await request.json();
+
+  const { nombre, url } = body;
+
+  const res = await db.insert(MenuAzul).values({ nombre, url });
+
+  return new Response(JSON.stringify(res), {
+    status: 200,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+};

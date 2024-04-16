@@ -4,6 +4,7 @@ import Layout, { urlMain } from "../../layouts/Layout.astro";
 import MiembroPage from "../../components/MiembroPage";
 import members from "../../../public/configs/members.json";
 import Tablespersonal from "./../../components/Tablespersonal";
+import CintaPage from "./../../components/Cintapage";
 
 export const getStaticPaths = (async () => {
   return members.map((el: { id: number }) => ({
@@ -14,6 +15,7 @@ const { miembro } = Astro.params;
 ---
 
 <Layout title=`Miembro ${miembro}`>
+  <CintaPage />
   <MiembroPage id={miembro} client:visible />
   <Tablespersonal id={miembro} />
 </Layout>

@@ -41,8 +41,13 @@ const Banners: FC = () => {
     <section className="aspect-video relative overflow-hidden w-full h-1/5  sm:h-3/4">
       {!isPending &&
         transitions((style, index) => (
-          <animated.div style={style} className="z-0 h-full w-full">
-            <Img source={data[index]["url"]} alt="ola" />
+          <animated.div style={style} className="z-0 h-full w-full relative">
+            <Img source={data[index]["img"]} alt="ola" />
+
+            <div className="absolute top-2/4 right-1/4 origin-center bg-white opacity-80 w-60 h-50 p-2">
+              <h2>{data[index]["title"]}</h2>
+              <p>{data[index]["description"]}</p>
+            </div>
           </animated.div>
         ))}
       {isPending && (

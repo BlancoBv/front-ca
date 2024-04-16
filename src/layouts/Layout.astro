@@ -3,6 +3,7 @@ import { ViewTransitions } from "astro:transitions";
 // import NavBar from "../components/NavBar.astro";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar";
+import NavSuperior from "../components/NavSuperior";
 interface Props {
   title: string;
 }
@@ -28,13 +29,11 @@ export const urlMain = "http://localhost:4321";
       <span class="text-xl font-bold w-full sm:w-2/4"
         >TecNM campus de los rios</span
       >
-      <nav class="hidden sm:flex">
-        <a href="https://rios.tecnm.mx">Mi TecNM Ríos</a>
-      </nav>
+      <NavSuperior client:visible />
     </header>
     <div class="sticky top-0 p-2 bg-white h-32 flex flex-col z-50 shadow-sm">
       <img src="/logoCA.png" alt="Logo Cuerpo Academico" width="200px" />
-      <Navbar  client:only="react" />
+      <Navbar client:only="react" />
       <!-- <NavBar/> -->
     </div>
     <slot />

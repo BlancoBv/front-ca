@@ -21,26 +21,28 @@ const Navbar = () => {
   console.log(data);
 
   return (
-    !isPending &&
-    data.map((value: info) =>
-      value.SubMenus.length > 0 ? (
-        <Menudropdown
-          name={value.nombre}
-          items={value.SubMenus}
-          test={value.url}
-          baseUrl={value.url}
-        />
-      ) : (
-        <a
-          href={`/${value.url}`}
-          className={`border-blue-600 ${
-            pathname === value.url ? "border-b-2 text-blue-600" : ""
-          }`}
-        >
-          {value.nombre}
-        </a>
-      )
-    )
+    <nav className="flex-grow flex flex-row justify-evenly">
+      {!isPending &&
+        data.map((value: info) =>
+          value.SubMenus.length > 0 ? (
+            <Menudropdown
+              name={value.nombre}
+              items={value.SubMenus}
+              test={value.url}
+              baseUrl={value.url}
+            />
+          ) : (
+            <a
+              href={`/${value.url}`}
+              className={`border-blue-600 ${
+                pathname === value.url ? "border-b-2 text-blue-600" : ""
+              }`}
+            >
+              {value.nombre}
+            </a>
+          )
+        )}
+    </nav>
   );
 };
 

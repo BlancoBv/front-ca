@@ -2,13 +2,55 @@ import type { FC } from "react";
 import useFetchData from "../hooks/useFetchData";
 import Img from "./Img";
 
-const MiembroPage: FC<{ id: string | undefined }> = ({ id }) => {
-  const { data, isPending, error } = useFetchData("/configs/members.json");
-
+const MiembroPage: FC<{
+  id: string | undefined;
+  datos: {
+    id: number;
+    nombre: string;
+    img: string;
+    apepat: string;
+    apemat: string;
+    puesto: string | null;
+    resumen: string | null;
+  };
+}> = ({ id, datos }) => {
   return (
-    <section className=" flex mx-32 my-12 max-sm:">
-      {isPending && <div>Cargando...</div>}
-      {!isPending && !error && <Success data={data} id={id} />}
+    <section className="flex flex-col px-40">
+      {/* {isPending && <div>Cargando...</div>}
+      {!isPending && !error && <Success data={data} id={id} />} */}
+      <div className="flex w-full h-28 items-center justify-between">
+        <h1>{datos.nombre}</h1>
+        <ul className="list-none flex">
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>Lider CA</li>
+        </ul>
+      </div>
+      <div className="flex-wrap">
+        <Img
+          source={datos.img}
+          alt={datos.nombre}
+          styles="size-40 rounded-lg"
+        />
+        <div className="flex flex-col min-w-24 pl-8 space-y-4">
+          <div className="flex flex-col border-b-2 border-b-gray-300 py-2">
+            <h2 className="">{`${datos.nombre} ${datos.apepat} ${datos.apemat}`}</h2>
+            <h3 className="">{datos.puesto}</h3>
+          </div>
+          <div className="flex flex-col border-b-2 border-b-gray-300 py-2">
+            <a href="#" className="text-gray-500 hover:text-blue-500">
+              CORREO@CORREO.COM
+            </a>
+            <a href="#" className="text-gray-500 hover:text-blue-500">
+              CORREO@CORREO.COM
+            </a>
+          </div>
+          <div className="flex">
+            <p className="text-justify flex-grow p-1">{datos.resumen}</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

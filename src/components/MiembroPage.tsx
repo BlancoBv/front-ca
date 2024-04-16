@@ -6,7 +6,7 @@ const MiembroPage: FC<{ id: string | undefined }> = ({ id }) => {
   const { data, isPending, error } = useFetchData("/configs/members.json");
 
   return (
-    <section className=" flex-wrap mx-32 my-12">
+    <section className=" flex mx-32 my-12 max-sm:">
       {isPending && <div>Cargando...</div>}
       {!isPending && !error && <Success data={data} id={id} />}
     </section>
@@ -23,13 +23,13 @@ const Success: FC<{ data: any; id: any }> = ({ data, id }) => {
   console.log(filteredMember);
   return (
     <>
-      <div className="flex-wrap flex-col">
+      <div className="flex w-screen flex-col sm:flex-row">
         <Img
           source={filteredMember.img}
           alt={filteredMember.nombre}
-          styles="size-40 rounded-lg"
+          styles="size-40 object-cover rounded-lg max-sm:size-60 max-sm:justify-center"
         />
-        <div className="flex flex-col min-w-full pl-8 space-y-4">
+        <div className="flex flex-col pl-8 space-y-4">
           <div className="flex flex-col border-b-2 border-b-gray-300 py-2">
             <h2 className="">{filteredMember.nombre}</h2>
             <h3 className="">{filteredMember.puesto}</h3>
@@ -43,9 +43,7 @@ const Success: FC<{ data: any; id: any }> = ({ data, id }) => {
             </a>
           </div>
           <div className="flex">
-            <p className="text-justify flex-wrap min-w-32">
-              {filteredMember.resumen}
-            </p>
+            <p className="text-justify w-full">{filteredMember.resumen}</p>
           </div>
         </div>
       </div>

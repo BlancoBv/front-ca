@@ -27,7 +27,7 @@ export const POST: APIRoute = async ({ request }) => {
   const { nombre, apepat, apemat, puesto, grado, resumen, bio, contacto } =
     body;
 
-  await db.insert(Miembros).values({
+  const res = await db.insert(Miembros).values({
     nombre,
     apepat,
     apemat,
@@ -38,9 +38,10 @@ export const POST: APIRoute = async ({ request }) => {
     contacto,
   });
 
-  return new Response(
-    JSON.stringify({
-      message: "Se guardo correctamente",
-    })
-  );
+  return new Response(JSON.stringify(res), {
+    status: 201,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 };

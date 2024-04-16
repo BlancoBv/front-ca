@@ -25,3 +25,48 @@ export const GET: APIRoute = async ({ params }) => {
     },
   });
 };
+
+export const PUT: APIRoute = async ({ request, params }) => {
+  const body = await request.json();
+
+  const { id } = params;
+
+  const {
+    clave,
+    proyecto,
+    duracion,
+    director,
+    colaboradores,
+    tipo,
+    vigencia,
+    status,
+    descripcion,
+    url,
+  } = body;
+
+  const res = await db
+    .update(Proyectos)
+    .set({
+      clave,
+      proyecto,
+      duracion,
+      director,
+      colaboradores,
+      tipo,
+      vigencia,
+      status,
+      descripcion,
+      url,
+    })
+    .where(eq(Proyectos.id, Number(id)));
+
+  return new Response(JSON.stringify(res));
+};
+
+export const DELETE: APIRoute = async ({ params }) => {
+  const id = params.id;
+
+  const res = await db.delete(Proyectos).where(eq(Proyectos.id, Number(id)));
+
+  return new Response(JSON.stringify(res));
+};

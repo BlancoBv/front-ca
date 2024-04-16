@@ -25,3 +25,36 @@ export const GET: APIRoute = async ({ params }) => {
     },
   });
 };
+
+export const PUT: APIRoute = async ({ request, params }) => {
+  const body = await request.json();
+
+  const { id } = params;
+
+  const { ISSN, articulo, autores, tipo, anio, descripcion, url } = body;
+
+  const res = await db
+    .update(Publicaciones)
+    .set({
+      ISSN,
+      articulo,
+      autores,
+      tipo,
+      anio,
+      descripcion,
+      url,
+    })
+    .where(eq(Publicaciones.id, Number(id)));
+
+  return new Response(JSON.stringify(res));
+};
+
+export const DELETE: APIRoute = async ({ params }) => {
+  const id = params.id;
+
+  const res = await db
+    .delete(Publicaciones)
+    .where(eq(Publicaciones.id, Number(id)));
+
+  return new Response(JSON.stringify(res));
+};

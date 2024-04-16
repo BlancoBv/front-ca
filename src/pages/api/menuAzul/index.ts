@@ -37,7 +37,7 @@ export const POST: APIRoute = async ({ request }) => {
   const res = await db.insert(MenuAzul).values({ nombre, url });
 
   return new Response(JSON.stringify(res), {
-    status: 200,
+    status: 201,
     headers: {
       "Content-Type": "application/json",
     },

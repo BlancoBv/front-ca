@@ -37,7 +37,7 @@ export const PUT: APIRoute = async ({ request, params }) => {
   const { nombre, apepat, apemat, puesto, grado, resumen, bio, contacto } =
     body;
 
-  await db
+  const res = await db
     .update(Miembros)
     .set({
       nombre,
@@ -51,21 +51,13 @@ export const PUT: APIRoute = async ({ request, params }) => {
     })
     .where(eq(Miembros.id, Number(id)));
 
-  return new Response(
-    JSON.stringify({
-      message: "Se guardo correctamente",
-    })
-  );
+  return new Response(JSON.stringify(res));
 };
 
 export const DELETE: APIRoute = async ({ params }) => {
   const id = params.id;
 
-  await db.delete(Miembros).where(eq(Miembros.id, Number(id)));
+  const res = await db.delete(Miembros).where(eq(Miembros.id, Number(id)));
 
-  return new Response(
-    JSON.stringify({
-      message: "Se guardo correctamente",
-    })
-  );
+  return new Response(JSON.stringify(res));
 };

@@ -20,3 +20,26 @@ export const GET: APIRoute = async () => {
     },
   });
 };
+
+export const POST: APIRoute = async ({ request }) => {
+  const body = await request.json();
+
+  const { ISSN, articulo, autores, tipo, anio, descripcion, url } = body;
+
+  const res = await db.insert(Publicaciones).values({
+    ISSN,
+    articulo,
+    autores,
+    tipo,
+    anio,
+    descripcion,
+    url,
+  });
+
+  return new Response(JSON.stringify(res), {
+    status: 201,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+};

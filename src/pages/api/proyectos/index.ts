@@ -20,3 +20,40 @@ export const GET: APIRoute = async () => {
     },
   });
 };
+
+export const POST: APIRoute = async ({ request }) => {
+  const body = await request.json();
+
+  const {
+    clave,
+    proyecto,
+    duracion,
+    director,
+    colaboradores,
+    tipo,
+    vigencia,
+    status,
+    descripcion,
+    url,
+  } = body;
+
+  const res = await db.insert(Proyectos).values({
+    clave,
+    proyecto,
+    duracion,
+    director,
+    colaboradores,
+    tipo,
+    vigencia,
+    status,
+    descripcion,
+    url,
+  });
+
+  return new Response(JSON.stringify(res), {
+    status: 201,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+};

@@ -25,7 +25,7 @@ export default async function seed() {
       img: "/img/miembros/2.jpg",
       resumen:
         "Profesor investigador del Instituto Tecnológico Superior de los Ríos. Realizó sus estudios de Maestría en el Centro de Investigación y estudios Avanzados del IPN (CINVESTAV) en el área de Inteligencia Artificial. Se especializó en Web Semántica en la Universidad de Chile. Finalizó su Doctorado en Ciencias de la Computación en el Centro Nacional de Investigación y Desarrollo Tecnológico.",
-      bio: null,
+      bio: "Asimismo, ha realizado distintas estancias de investigación: INAOE, CINVESTAV, Universidad Politécnica de Madrid, etc. Ha publicado en distintas revistas y congresos internacionales de prestigio, distintos capítulos de libros. Representante técnico de distintos proyectos de investigación con financiamiento externo. Líder de Cuerpo Académico Cómputo Distribuido; miembro de la Asociación Mexicana para Procesamiento de Lenguaje Natural, de la Sociedad Mexicana de Inteligencia Artificial y del Sistema Estatal de Investigadores del estado de Tabasco. Sus áreas de interés son procesamiento de lenguaje natural, extracción y recuperación de información, web semántica y Deep Learning.",
       contacto: {
         redes: [{ plataforma: "facebook", url: "facebook/pechmay" }],
         contactos: ["Fernando@cinves"],
@@ -72,7 +72,7 @@ export default async function seed() {
       grado: "ING",
       resumen:
         "Profesor-investigador del TecNM Campus de los Ríos. Miembro del cuerpo académico computo distribuido. Acredita numerosas contribuciones a congresos y participaciones el desarrollo de proyectos de investigación de PRODEP y TecNM. Publicación de 10 artículos nacionales e internacionales, artículos indexados en revistasde prestigio. ",
-      bio: "",
+      bio: "Asimismo, acredita numerosas contribuciones a congresos y participaciones el desarrollo de proyectos de investigación de PRODEP y TecNM. Ha publicado más de 10 artículos nacionales e internacionales, artículos indexados en revistas de prestigio en los últimos años. Ha dirigido Tesis de Licenciatura. Actualmente es miembro del Sistema Estatal de Investigadores. Imparte talleres sobre Diseño de Apps Móviles, Uso de Látex en trabajos académicos y Consejos para la elaboración de trabajos académicos.",
       contacto: [],
     },
   ]);

@@ -20,6 +20,12 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.1.0
     version: 5.1.0(astro@4.5.12)(tailwindcss@3.4.3)
+  '@prismicio/client':
+    specifier: ^7.4.1
+    version: 7.4.1
+  '@prismicio/helpers':
+    specifier: ^2.3.9
+    version: 2.3.9
   '@react-spring/web':
     specifier: ^9.7.3
     version: 9.7.3(react-dom@18.2.0)(react@18.2.0)
@@ -1127,6 +1133,34 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@prismicio/client@7.4.1:
+    resolution: {integrity: sha512-2aYheJkuKRXL1HWBgq72HeYnloaj4+SIpp+9Pstla9zyJQkHcHZoHqg9F1YChnZ2mYoaUePbkriQ/fxnAIWF0w==}
+    engines: {node: '>=14.15.0'}
+    dependencies:
+      imgix-url-builder: 0.0.4
+    dev: false
+
+  /@prismicio/helpers@2.3.9:
+    resolution: {integrity: sha512-p7Y1sG83A2YPZvptfAzuZA8xH1bdM2wGRjqSKW9Qa0rAnBq2OfVKRvwl9OMCZML4eLUMxSEUAEWRVSoKpQnJvA==}
+    engines: {node: '>=12.7.0'}
+    dependencies:
+      '@prismicio/richtext': 2.1.5
+      '@prismicio/types': 0.2.8
+      imgix-url-builder: 0.0.3
+    dev: false
+
+  /@prismicio/richtext@2.1.5:
+    resolution: {integrity: sha512-Sf6iCsciPmfK3uQeFmeY9RTRSuhrCVzyU39OkiJ1VJn8O0531pKapGoWS+5WGxouJtE5+jGqV8L+L2mKP7NkXQ==}
+    engines: {node: '>=12.7.0'}
+    dependencies:
+      '@prismicio/types': 0.2.8
+    dev: false
+
+  /@prismicio/types@0.2.8:
+    resolution: {integrity: sha512-EmuYYil56U+UtEifMD/9TmLzpWliV+X6kypwPq47GNXmIXyFK1JsP3z872fUziXwoBjd2YILj28DNdYXlLOpXg==}
+    engines: {node: '>=12.7.0'}
+    dev: false
 
   /@react-spring/animated@9.7.3(react@18.2.0):
     resolution: {integrity: sha512-5CWeNJt9pNgyvuSzQH+uy2pvTg8Y4/OisoscZIR8/ZNLIOI+CatFBhGZpDGTF/OzdNFsAoGk3wiUYTwoJ0YIvw==}
@@ -2990,6 +3024,16 @@ packages:
 
   /ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
+    dev: false
+
+  /imgix-url-builder@0.0.3:
+    resolution: {integrity: sha512-8Oc2Cn4+jF06sEfJcVPlWYfD2F6RjrwIMbk1xEzux8unoB5LsvFc/GL1BQ47HPaeE12ReX2nMUcjUslGYWLxHA==}
+    engines: {node: '>=12.7.0'}
+    dev: false
+
+  /imgix-url-builder@0.0.4:
+    resolution: {integrity: sha512-JRLydfxGTTbSSOG82ewuCgnmw/CzIPzoDqpP3UYD7RE+QWS8ZZbpF87ZuRqtcbEKdxahRsExinuKRxPZVvukWA==}
+    engines: {node: '>=12.7.0'}
     dev: false
 
   /import-meta-resolve@4.0.0:

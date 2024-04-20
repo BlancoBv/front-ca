@@ -79,10 +79,11 @@ export default async function seed() {
 
   //Insertar MenuAzul
   await db.insert(MenuAzul).values([
-    { id: 1, nombre: "Inicio", url: "/" },
+    { id: 1, nombre: "Inicio", url: "" },
     { id: 2, nombre: "Cuerpo acádemico", url: "cuerpo-academico" },
     { id: 3, nombre: "Miembros", url: "miembros" },
     { id: 4, nombre: "Iniciar sesión", url: "login" },
+    { id: 5, nombre: "API prismic", url: "post/ZiLCbRAAACxXR1Ey" },
   ]);
 
   //Insertar SubmenuAzul

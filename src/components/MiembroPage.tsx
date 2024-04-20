@@ -12,33 +12,23 @@ const MiembroPage: FC<{
     apemat: string;
     puesto: string | null;
     resumen: string | null;
+    bio: string | null;
   };
 }> = ({ id, datos }) => {
   return (
-    <section className="flex flex-col px-40">
-      {/* {isPending && <div>Cargando...</div>}
-      {!isPending && !error && <Success data={data} id={id} />} */}
-      <div className="flex w-full h-28 items-center justify-between">
-        <h1>{datos.nombre}</h1>
-        <ul className="list-none flex">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>Lider CA</li>
-        </ul>
-      </div>
-      <div className="flex-wrap">
+    <section className=" flex flex-row sm:flex-col w-screen py-10 px-6 sm:px-40">
+      <div className="flex justify-center flex-col sm:flex-row">
         <Img
           source={datos.img}
           alt={datos.nombre}
-          styles="size-40 rounded-lg"
+          styles="size-70 rounded-lg sm:size-40"
         />
-        <div className="flex flex-col min-w-24 pl-8 space-y-4">
-          <div className="flex flex-col border-b-2 border-b-gray-300 py-2">
+        <div className="flex flex-col sm:pl-8">
+          <div className="flex flex-col border-b-2 border-b-gray-300 py-3">
             <h2 className="">{`${datos.nombre} ${datos.apepat} ${datos.apemat}`}</h2>
             <h3 className="">{datos.puesto}</h3>
           </div>
-          <div className="flex flex-col border-b-2 border-b-gray-300 py-2">
+          <div className="flex flex-col border-b-2 border-b-gray-300 py-3">
             <a href="#" className="text-gray-500 hover:text-blue-500">
               CORREO@CORREO.COM
             </a>
@@ -46,8 +36,14 @@ const MiembroPage: FC<{
               CORREO@CORREO.COM
             </a>
           </div>
-          <div className="flex">
-            <p className="text-justify flex-grow p-1">{datos.resumen}</p>
+          <div className="flex py-3">
+            <p className="text-justify">{datos.resumen}</p>
+          </div>
+          <div>
+            <h1>aqui van las redes sociales</h1>
+          </div>
+          <div className="flex py-3">
+            <p className="text-justify">{datos.bio}</p>
           </div>
         </div>
       </div>
@@ -55,41 +51,4 @@ const MiembroPage: FC<{
   );
 };
 
-const Success: FC<{ data: any; id: any }> = ({ data, id }) => {
-  const filteredMember: {
-    nombre: string;
-    resumen: string;
-    img: string;
-    puesto: string;
-  } = data.filter((el: any) => el.id === Number(id))[0];
-  console.log(filteredMember);
-  return (
-    <>
-      <div className="flex w-screen flex-col sm:flex-row">
-        <Img
-          source={filteredMember.img}
-          alt={filteredMember.nombre}
-          styles="size-40 object-cover rounded-lg max-sm:size-60 max-sm:justify-center"
-        />
-        <div className="flex flex-col pl-8 space-y-4">
-          <div className="flex flex-col border-b-2 border-b-gray-300 py-2">
-            <h2 className="">{filteredMember.nombre}</h2>
-            <h3 className="">{filteredMember.puesto}</h3>
-          </div>
-          <div className="flex flex-col border-b-2 border-b-gray-300 py-2">
-            <a href="#" className="text-gray-500 hover:text-blue-500">
-              CORREO@CORREO.COM
-            </a>
-            <a href="#" className="text-gray-500 hover:text-blue-500">
-              CORREO@CORREO.COM
-            </a>
-          </div>
-          <div className="flex">
-            <p className="text-justify w-full">{filteredMember.resumen}</p>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
 export default MiembroPage;

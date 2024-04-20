@@ -6,6 +6,7 @@ const Tablespersonal: FC<{ id: string | undefined }> = ({}) => {
   return (
     <>
       <div className="flex flex-col w-full h-32 px-40">
+        <h1>Tablas</h1>
         <table className="table-auto text-sm">
           <thead className="h-10">
             <tr className="bg-cyan-500 text-white">

@@ -11,5 +11,5 @@ export const getPost = () => {
 };
 
 export const getPostByID = (id: string) => {
-  return client.getByID(id);
+  return client.getByUID("post", id);
 };

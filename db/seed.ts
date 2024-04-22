@@ -83,7 +83,7 @@ export default async function seed() {
     { id: 2, nombre: "Cuerpo acádemico", url: "cuerpo-academico" },
     { id: 3, nombre: "Miembros", url: "miembros" },
     { id: 4, nombre: "Iniciar sesión", url: "login" },
-    { id: 5, nombre: "API prismic", url: "post/ZiLCbRAAACxXR1Ey" },
+    { id: 5, nombre: "API prismic", url: "post/carga-astro" },
   ]);
 
   //Insertar SubmenuAzul

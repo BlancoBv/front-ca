@@ -1,0 +1,9 @@
+---
+import NuevoMiembro from "../../components/Formularios/NuevoMiembro"
+import Layout from "../../layouts/Layout.astro";
+const { miembro } = Astro.params;
+---
+
+<Layout title=`Miembro ${miembro}`>
+  <NuevoMiembro client:only="react">
+</Layout>

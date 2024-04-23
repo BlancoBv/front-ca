@@ -1,12 +1,11 @@
 import type { FC } from "react";
 import Img from "./Img";
-import LogoCA from "/logoCA.png?url";
 
 const LoginForm: FC = () => {
   return (
     <section className="flex justify-evenly items-center">
       <form className="h-full shadow-lg p-2   rounded-lg flex flex-col">
-        <Img source={LogoCA} alt="LogoCA" />
+        <Img source={"/img/logoCA.png"} alt="LogoCA" />
         <div>
           <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
             Nombre de usuario

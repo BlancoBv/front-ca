@@ -1,19 +1,27 @@
 ---
-import type { GetStaticPaths } from "astro";
-import Layout, { urlMain } from "../../layouts/Layout.astro";
+import { db, Miembros, eq } from "astro:db";
+import Layout from "../../layouts/Layout.astro";
 import MiembroPage from "../../components/MiembroPage";
-import members from "../../../public/configs/members.json";
-import Tablespersonal from "../../components/Tablespersonal.astro";
+import Tablespersonal from "./../../components/Tablespersonal";
+import CintaPage from "./../../components/Cintapage";
 
-export const getStaticPaths = (async () => {
-  return members.map((el: { id: number }) => ({
-    params: { miembro: String(el.id) },
-  }));
-}) satisfies GetStaticPaths;
 const { miembro } = Astro.params;
+
+const response = await db
+  .select()
+  .from(Miembros)
+  .where(eq(Miembros.id, Number(miembro))); //obtiene los datos por medio de un select
+
+console.log(response);
+
+if (response.length === 0) return Astro.redirect("/404"); //redirige a errror si no se encuentra algun dato con el endpoint proporcionado
+
+export const prerender = false;
 ---
 
 <Layout title=`Miembro ${miembro}`>
-  <MiembroPage id={miembro} client:visible />
-  <Tablespersonal id={miembro} client:visible/>
+  <CintaPage />
+ 
+  <MiembroPage id={miembro} datos={response[0]} client:visible />
+  <!-- <Tablespersonal id={miembro} /> -->
 </Layout>

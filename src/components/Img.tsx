@@ -10,9 +10,9 @@ const Img: FC<{ source: string; alt: string; styles?: string }> = ({
 
   return (
     <>
-      {imagePending && (
+      {/* {imagePending && (
         <div className="animate-pulse w-full h-full bg-slate-700" />
-      )}
+      )} */}
 
       <img
         className={`object-cover ${styles}`}

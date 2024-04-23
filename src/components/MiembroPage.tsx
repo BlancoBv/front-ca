@@ -1,6 +1,12 @@
 import type { FC } from "react";
 import useFetchData from "../hooks/useFetchData";
 import Img from "./Img";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faXTwitter,
+  faLinkedinIn,
+} from "@fortawesome/free-brands-svg-icons";
 
 const MiembroPage: FC<{
   id: string | undefined;
@@ -39,8 +45,31 @@ const MiembroPage: FC<{
           <div className="flex py-3">
             <p className="text-justify">{datos.resumen}</p>
           </div>
-          <div>
-            <h1>aqui van las redes sociales</h1>
+          <div className=" flex space-x-5">
+            <a href="">
+              <FontAwesomeIcon
+                className=" 
+                size-9
+                "
+                icon={faFacebookF}
+              />
+            </a>
+            <a href="">
+              <FontAwesomeIcon
+                className=" 
+                size-9
+                "
+                icon={faXTwitter}
+              />
+            </a>
+            <a href="">
+              <FontAwesomeIcon
+                className=" 
+                size-9
+                "
+                icon={faLinkedinIn}
+              />
+            </a>
           </div>
           <div className="flex py-3">
             <p className="text-justify">{datos.bio}</p>

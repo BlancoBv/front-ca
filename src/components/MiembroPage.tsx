@@ -25,8 +25,8 @@ const MiembroPage: FC<{
         />
         <div className="flex flex-col sm:pl-8">
           <div className="flex flex-col border-b-2 border-b-gray-300 py-3">
-            <h2 className="">{`${datos.nombre} ${datos.apepat} ${datos.apemat}`}</h2>
-            <h3 className="">{datos.puesto}</h3>
+            <h5 className="">{`${datos.nombre} ${datos.apepat} ${datos.apemat}`}</h5>
+            <h6 className="">{datos.puesto}</h6>
           </div>
           <div className="flex flex-col border-b-2 border-b-gray-300 py-3">
             <a href="#" className="text-gray-500 hover:text-blue-500">

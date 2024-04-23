@@ -3,6 +3,8 @@ import Layout from "../../layouts/Layout.astro";
 const { id } = Astro.params;
 import { getPostByID } from "../../utils/prismicFetch";
 import * as prismicH from "@prismicio/helpers";
+import CintaPage from "../../components/Cintapage.astro";
+import { title } from "process";
 
 const blogData = await getPostByID(String(id))
   .then((res) => res)
@@ -13,10 +15,10 @@ const blogData = await getPostByID(String(id))
   );
 
 if (!blogData) return Astro.redirect("/404");
-console.log(blogData);
+console.log(blogData.data.titulo_del_blog);
 
 const contenido = prismicH.asHTML(blogData.data.contenido);
-const titul = prismicH.asHTML(blogData.data.titulo_del_blog);
+const titulo = prismicH.asHTML(blogData.data.titulo_del_blog);
 const imagen =
   Object.values(blogData.data.imagen).length > 0
     ? prismicH.asImageSrc(blogData.data.imagen)
@@ -26,19 +28,22 @@ export const prerender = false;
 ---
 
 <Layout title="Prueba">
-  <section class="flex flex-col gap-4 p-2">
-    <div class="text-center" set:html={titul} />
-    {
+  <section class="flex flex-col gap-4 w-full">
+    <CintaPage  title={blogData.data.titulo_del_blog[0].text} url={"/post" + blogData?.url}/>
+    <div class="text-center py-5" set:html={titulo} />
+    <div class="w-full px-40">
+      {
       imagen && (
-        <div class="w-full flex justify-center">
+        <div class=" flex justify-end">
           <img
-            class="size-2/4 rounded"
+            class="size-1/4 rounded"
             src={imagen}
             alt={blogData.data.imagen.alt}
           />
         </div>
       )
     }
-    <div set:html={contenido} />
+    <div class=" text-justify py-12" set:html={contenido} />
+    </div>
   </section>
 </Layout>

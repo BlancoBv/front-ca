@@ -65,8 +65,8 @@ const Caruselpersonal: FC = () => {
                 alt="img"
               />
               <div className="flex-col px-8">
-                <h3 className="text-sky-700">{data[index]["nombre"]} </h3>
-                <h4>{data[index]["puesto"]}</h4>
+                <h5 className="text-sky-700">{data[index]["nombre"]} </h5>
+                <h6>{data[index]["puesto"]}</h6>
               </div>
             </div>
           </animated.div>

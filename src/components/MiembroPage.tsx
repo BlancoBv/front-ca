@@ -3,9 +3,9 @@ import useFetchData from "../hooks/useFetchData";
 import Img from "./Img";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faFacebookF,
+  faFacebook,
   faXTwitter,
-  faLinkedinIn,
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
 const MiembroPage: FC<{
@@ -51,7 +51,7 @@ const MiembroPage: FC<{
                 className=" 
                 size-9
                 "
-                icon={faFacebookF}
+                icon={faFacebook}
               />
             </a>
             <a href="">
@@ -67,7 +67,7 @@ const MiembroPage: FC<{
                 className=" 
                 size-9
                 "
-                icon={faLinkedinIn}
+                icon={faLinkedin}
               />
             </a>
           </div>

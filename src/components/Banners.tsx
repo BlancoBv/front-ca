@@ -40,15 +40,19 @@ const Banners: FC = () => {
   }, [index]);
 
   return (
-    <section className="aspect-video relative overflow-hidden w-full h-1/5  sm:h-3/4">
+    <div className="relative overflow-hidden w-full h-60 sm:h-3/4">
       {!isPending &&
         transitions((style, index) => (
           <animated.div style={style} className="z-0 h-full w-full relative">
-            <Img source={data[index]["img"]} alt="ola" />
+            <Img
+              source={data[index]["img"]}
+              alt="ola"
+              styles="h-full w-full object-fit"
+            />
 
-            <div className=" absolute top-2/4 right-1/4 origin-center bg-white opacity-80 w-60 h-50 p-3 rounded-lg">
-              <h4 className=" italic text-center">{data[index]["title"]}</h4>
-              <p className=" text-center italic text-sm py-2">
+            <div className="absolute bottom-0 origin-center bg-white opacity-80 h-50 p-3 rounded-lg w-full left-0 sm:bottom-1/4 sm:w-60 sm:left-3/4">
+              <h4 className="text-center">{data[index]["title"]}</h4>
+              <p className="italic text-sm py-2 text-justify sm:text-center">
                 {data[index]["description"]}
               </p>
             </div>
@@ -70,7 +74,7 @@ const Banners: FC = () => {
       >
         <FontAwesomeIcon className="size-14" icon={faAngleLeft} />
       </button>
-    </section>
+    </div>
   );
 };
 

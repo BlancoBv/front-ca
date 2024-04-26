@@ -10,15 +10,15 @@ const Menudropdown = ({ name, items, test, baseUrl }: Props) => {
   const { pathname } = window.location;
   return (
     <div className="relative inline-block text-left group">
-      <button
-        className={`inline-flex items-center justify-center px-4 text-black transition duration-150 ease-in-out hover:text-blue-600 border-blue-600 ${
+      <span
+        className={`inline-flex items-center justify-center text-white sm:px-4 sm:text-black transition duration-150 ease-in-out hover:text-blue-600 border-blue-600 ${
           regExp(test, pathname) ? "border-b-2 text-blue-600" : ""
         }`}
       >
         {name}
-      </button>
+      </span>
 
-      <div className="hidden absolute right-0 mt-1 origin-top-right border-4 border-b-blue-600 bg-white border-gray-100 divide-y divide-gray-200 rounded-md shadow-lg group-hover:block min-w-full">
+      <div className="hidden sm:absolute right-0 mt-1 origin-top-right border-4 sm:border-b-blue-600 bg-white border-gray-100 divide-y divide-gray-200 rounded-md sm:shadow-lg group-hover:block min-w-40">
         {items.map((element) => (
           <a
             href={`/${baseUrl}/${element.url}`}

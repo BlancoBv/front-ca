@@ -2,7 +2,7 @@ import type { FC } from "react";
 import useGetData from "../hooks/useGetData";
 import Menudropdown from "./Menudropdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 interface info {
   id: number;
@@ -33,19 +33,18 @@ const Navbar: FC<{ pathname: string }> = ({ pathname }) => {
   return (
     <nav className="flex-grow flex flex-row justify-evenly h-10 main-nav">
       <FontAwesomeIcon
-        className="absolute right-2 size-10"
+        className="absolute right-2 size-10 text-2xl"
         icon={faBars}
         onClick={showMenu}
-        width="30px"
       />
       <div
         id="container-nav"
-        className="w-full flex justify-evenly make-invisible"
+        className="w-full p-6 sm:p-0 flex make-invisible text-white bg-blue-900 sm:bg-inherit sm:justify-evenly sm:text-black "
       >
         <FontAwesomeIcon
-          icon={faBarsStaggered}
+          className="absolute end-4 size-10 text-2xl"
+          icon={faXmark}
           onClick={hideMenu}
-          width="30px"
         />
         {!isPending &&
           data.map((value: info) =>
@@ -61,7 +60,7 @@ const Navbar: FC<{ pathname: string }> = ({ pathname }) => {
                 href={`/${value.url}`}
                 className={`border-blue-600 ${
                   pathname === value.url ? "border-b-2 text-blue-600" : ""
-                }`}
+                }hover:text-blue-600`}
               >
                 {value.nombre}
               </a>

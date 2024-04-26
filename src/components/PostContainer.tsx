@@ -1,7 +1,6 @@
 import type { FC } from "react";
 import useGetData from "../hooks/useGetData";
 import PostCard from "./PostCard";
-import * as prismicH from "@prismicio/helpers";
 
 const PostContainer: FC = () => {
   const { data, isPending } = useGetData("/post");

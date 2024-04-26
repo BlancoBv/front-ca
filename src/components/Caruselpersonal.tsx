@@ -24,37 +24,20 @@ const Caruselpersonal: FC = () => {
     exitBeforeEnter: true,
     config: { duration: 2500 },
   });
-  const previousCard = () => {
-    setIndex((prev) => {
-      if (prev === 0) {
-        return data.length - 1;
-      }
-      return (prev - 1) % data.length;
-    });
-  };
-
-  const nextCard = () => {
-    setIndex((prev) => (prev + 1) % data.length);
-  };
 
   useEffect(() => {
     ref.start();
   }, [index]);
 
   return (
-    <section className="aspect-video relative overflow-hidden w-full h-28">
-      {/* {!isPending &&
-        data.map((el: any, key) => (
-         
-        ))} */}
-
+    <section className="aspect-video relative overflow-hidden w-full ">
       {!isPending &&
         transitions((style, index) => (
           <animated.div
             style={style}
             className="z-0 h-full flex flex-col place-content-center items-center"
           >
-            <p className="w-1/2 my-3 text-center text-xl font-sans">
+            <p className="w-full sm:w-1/2 my-3 text-center text-xl font-sans">
               {data[index]["resumen"]}
             </p>
 

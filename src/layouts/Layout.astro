@@ -1,9 +1,9 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-// import NavBar from "../components/NavBar.astro";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar";
 import NavSuperior from "../components/NavSuperior";
+import Accesibilidad from "../components/Accesibilidad";
 interface Props {
   title: string;
 }
@@ -38,6 +38,7 @@ export const urlMain = "http://localhost:4321";
       <Navbar client:visible pathname={pathname} />
       <!-- <NavBar/> -->
     </div>
+    <Accesibilidad client:visible />
     <slot />
 
     <!-- <Footer /> -->
@@ -122,6 +123,11 @@ export const urlMain = "http://localhost:4321";
             height: 100vh;
             flex-direction: column;
             top: 0px;
+            div,
+            a {
+              min-height: 50px;
+              margin-bottom: 2px;
+            }
           }
         }
       }
@@ -131,7 +137,6 @@ export const urlMain = "http://localhost:4321";
       }
       .make-invisible {
         right: -50vw;
-        transition: all 500ms ease-in-out;
       }
     </style>
   </body>

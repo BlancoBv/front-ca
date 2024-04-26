@@ -5,6 +5,7 @@ import { getPostByID } from "../../utils/prismicFetch";
 import * as prismicH from "@prismicio/helpers";
 import CintaPage from "../../components/Cintapage.astro";
 import { title } from "process";
+import Img from "../../components/Img";
 
 const blogData = await getPostByID(String(id))
   .then((res) => res)
@@ -28,22 +29,20 @@ export const prerender = false;
 ---
 
 <Layout title="Prueba">
-  <CintaPage  title={blogData.data.titulo_del_blog[0].text} url={"/post" + blogData?.url}/>
-  <section class="flex flex-col w-screen gap-4 px-6 sm:px-40">
-    <div class=" text-center py-6" set:html={titulo} />
+  <CintaPage title="Post" url={"/post" + blogData?.url} />
+  <section class="flex flex-col w-screen gap-4 p-6 sm:p-20">
+    <div class="text-center py-6" set:html={titulo} />
     <div class="w-full">
       {
-      imagen && (
-        <div class=" flex justify-center sm:justify-end">
-          <img
-            class=" size-52 rounded-lg sm:size-72"
-            src={imagen}
+        imagen && (
+          <Img
+            styles="size-3/4 rounded-lg float-none mx-auto sm:mx-0 sm:mr-2.5 sm:mb-2 sm:size-2/4 sm:float-left "
+            source={imagen}
             alt={blogData.data.imagen.alt}
           />
-        </div>
-      )
-    }
-    <div class=" text-justify py-12" set:html={contenido} />
+        )
+      }
+      <div class="text-justify" set:html={contenido} />
     </div>
   </section>
 </Layout>

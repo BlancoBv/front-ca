@@ -1,8 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import PostContainer from "../../components/PostContainer";
+import Cintapage from "../../components/Cintapage.astro";
+const { pathname } = Astro.url;
 ---
 
 <Layout title="Todos los post">
+  <Cintapage title="Eventos" url={pathname} />
   <PostContainer client:visible />
 </Layout>

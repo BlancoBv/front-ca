@@ -4,16 +4,18 @@ interface Props {
   url?: any;
 }
 const { title, url } = Astro.props;
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 ---
 
 <div
-  class="flex sm:px-28 px-10 w-full h-20 items-center justify-between bg-gray-200"
+  class="flex flex-col sm:flex-row sm:px-28 px-10 w-full h-20 items-center justify-between bg-gray-200"
 >
-  <h1 class="font-semibold text-3xl">{title}</h1>
-  <ul class="hidden sm:flex">
-    <li class="hover:text-blue-400 transition-colors duration-300 pr-1">
-      <a href="/">Inicio</a>
-    </li>
-    <li>{url}</li>
-  </ul>
+  <h3>{title}</h3>
+
+  <i class="flex">
+    <a class="hover:text-blue-400 transition-colors duration-300 pr-1" href="/"
+      ><FontAwesomeIcon icon={faHouse} /></a
+    >{url}
+  </i>
 </div>

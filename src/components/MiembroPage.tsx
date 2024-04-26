@@ -2,9 +2,9 @@ import type { FC } from "react";
 import Img from "./Img";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faFacebookF,
+  faFacebook,
   faXTwitter,
-  faLinkedinIn,
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import useGetData from "../hooks/useGetData";
 import Tablespersonal from "./Tablespersonal";
@@ -81,7 +81,7 @@ const MiembroPage: FC<{
                 className=" 
                 size-9
                 "
-                icon={faFacebookF}
+                icon={faFacebook}
               />
             </a>
             <a href="">
@@ -97,7 +97,7 @@ const MiembroPage: FC<{
                 className=" 
                 size-9
                 "
-                icon={faLinkedinIn}
+                icon={faLinkedin}
               />
             </a>
           </div>

@@ -31,17 +31,22 @@ const Navbar: FC<{ pathname: string }> = ({ pathname }) => {
   };
 
   return (
-    <nav className="flex-grow flex flex-row justify-evenly main-nav">
+    <nav className="flex-grow flex flex-row justify-evenly h-10 main-nav">
       <FontAwesomeIcon
-        className="absolute right-2"
+        className="absolute right-2 size-10"
         icon={faBars}
         onClick={showMenu}
+        width="30px"
       />
       <div
         id="container-nav"
         className="w-full flex justify-evenly make-invisible"
       >
-        <FontAwesomeIcon icon={faBarsStaggered} onClick={hideMenu} />
+        <FontAwesomeIcon
+          icon={faBarsStaggered}
+          onClick={hideMenu}
+          width="30px"
+        />
         {!isPending &&
           data.map((value: info) =>
             value.SubMenus.length > 0 ? (

@@ -42,12 +42,10 @@ export default async function seed() {
       resumen:
         "Cuenta con una Maestría en Ciencias en la Computación por el Centro de Investigación y de Estudios Avanzados del IPN, campus Tamaulipas, una Licenciatura en Computación por la Universidad Autónoma de Tabasco.",
       bio: "Es profesora e Investigadora del Tecnológico Nacional de México, Campus Los Ríos, pertenece al Cuerpo Académico “Cómputo Distribuido” en el mismo Instituto desde el 2012, en donde ha participado en diversos proyectos de Investigación Científicos. Sus áreas de interés son: Sistemas Distribuidos, Procesamiento de Lenguaje Natural y Redes de Próxima Generación. Actualmente es miembro del Sistema Estatal de Investigadores. ",
-      contacto: [
-        {
-          redes: [{ plataforma: "facebook", url: "facebook/marielchontal" }],
-          contactos: ["Edna@cinves"],
-        },
-      ],
+      contacto: {
+        redes: [{ plataforma: "facebook", url: "facebook/marielchontal" }],
+        contactos: ["Edna@cinves"],
+      },
     },
     {
       id: 3,
@@ -60,7 +58,7 @@ export default async function seed() {
       resumen:
         "Maestro en Administración de Tecnologías de la Información por la Universidad Juárez Autónoma de Tabasco e Ingeniero en Sistemas Computacionales por el Instituto Tenológico de Mérida. Profesor Investigador de la carrera de Ingeniería en Sistemas Computacionales del Instituto Tecnológico Superior de los Ríos en las líneas de investigación de Bases de datos y Cómputo Distribuido. ",
       bio: "Miembro del Cuerpo Académico de Cómputo Distribuido con estatus en formación. Ha participado en proyectos de Investigación con financiamiento PRODEP orientadas al desarrollo de Ontologías para el sector Agrícola. Sus intereses de investigación incluyen la Ingeniería de Software y la Web Semántica. Es miembro del Padrón Estatal de Investigadores de Tabasco. Se ha involucrado en proyectos de carácter social en la ciudad de Bernkastel Kues, Alemania.",
-      contacto: [],
+      contacto: {},
     },
     {
       id: 4,
@@ -73,7 +71,7 @@ export default async function seed() {
       resumen:
         "Profesor-investigador del TecNM Campus de los Ríos. Miembro del cuerpo académico computo distribuido. Acredita numerosas contribuciones a congresos y participaciones el desarrollo de proyectos de investigación de PRODEP y TecNM. Publicación de 10 artículos nacionales e internacionales, artículos indexados en revistasde prestigio. ",
       bio: "Asimismo, acredita numerosas contribuciones a congresos y participaciones el desarrollo de proyectos de investigación de PRODEP y TecNM. Ha publicado más de 10 artículos nacionales e internacionales, artículos indexados en revistas de prestigio en los últimos años. Ha dirigido Tesis de Licenciatura. Actualmente es miembro del Sistema Estatal de Investigadores. Imparte talleres sobre Diseño de Apps Móviles, Uso de Látex en trabajos académicos y Consejos para la elaboración de trabajos académicos.",
-      contacto: [],
+      contacto: {},
     },
   ]);
 
@@ -84,6 +82,7 @@ export default async function seed() {
     { id: 3, nombre: "Miembros", url: "miembros" },
     { id: 4, nombre: "Iniciar sesión", url: "login" },
     { id: 5, nombre: "API prismic", url: "post/carga-astro" },
+    { id: 6, nombre: "Eventos", url: "post" },
   ]);
 
   //Insertar SubmenuAzul

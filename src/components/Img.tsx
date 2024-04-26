@@ -7,18 +7,18 @@ const Img: FC<{ source: string; alt: string; styles?: string }> = ({
   styles,
 }) => {
   const [imagePending, setImagePending] = useState<boolean>(true);
+  console.log(imagePending);
 
   return (
     <>
-      {/* {imagePending && (
-        <div className="animate-pulse w-full h-full bg-slate-700" />
-      )} */}
-
       <img
         className={`object-cover ${styles}`}
         src={source}
         alt={alt}
-        onLoad={() => setImagePending(false)}
+        onLoad={async () => {
+          setImagePending(false);
+        }}
+        loading="lazy"
       />
     </>
   );

@@ -1,5 +1,3 @@
-// import { getProduct } from "../db";
-
 import type { APIRoute } from "astro";
 import { db, eq, Miembros } from "astro:db";
 
@@ -7,7 +5,6 @@ export const prerender = false;
 
 export async function GET({ params }: any) {
   const id = params.id;
-  console.log(id);
 
   const res = await db
     .selectDistinct()

@@ -6,13 +6,14 @@ import Tablespersonal from "./../../components/Tablespersonal";
 import CintaPage from "../../components/Cintapage.astro";
 
 const { miembro } = Astro.params;
+const { pathname } = Astro.url;
 
 const response = await db
   .select()
   .from(Miembros)
   .where(eq(Miembros.id, Number(miembro))); //obtiene los datos por medio de un select
 
-console.log(response);
+console.log(response, "ola");
 
 if (response.length === 0) return Astro.redirect("/404"); //redirige a errror si no se encuentra algun dato con el endpoint proporcionado
 
@@ -20,8 +21,8 @@ export const prerender = false;
 ---
 
 <Layout title=`Miembro ${miembro}`>
-  <CintaPage />
- 
+  <CintaPage title="Miembro" url={pathname} />
+
   <MiembroPage id={miembro} datos={response[0]} client:visible />
   <!-- <Tablespersonal id={miembro} /> -->
 </Layout>

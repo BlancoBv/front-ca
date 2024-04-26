@@ -84,6 +84,7 @@ export default async function seed() {
     { id: 3, nombre: "Miembros", url: "miembros" },
     { id: 4, nombre: "Iniciar sesión", url: "login" },
     { id: 5, nombre: "API prismic", url: "post/carga-astro" },
+    { id: 6, nombre: "Eventos", url: "post" },
   ]);
 
   //Insertar SubmenuAzul

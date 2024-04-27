@@ -18,7 +18,7 @@ const Caruselpersonal: FC = () => {
     leave: { opacity: 1, transform: "translate3d(-100%,0,-100px)" },
     onRest: (_a, _b, item) => {
       if (index === item) {
-        setIndex(index === data.length - 1 ? 0 : index + 1);
+        setIndex(index === data.length - 1 ? 0 : index + 0);
       }
     },
     exitBeforeEnter: true,
@@ -30,26 +30,28 @@ const Caruselpersonal: FC = () => {
   }, [index]);
 
   return (
-    <section className="aspect-video relative overflow-hidden w-full ">
+    <section className="aspect-video relative overflow-hidden w-full my-8 sm:m-0 h-full px-6 sm:px-40">
       {!isPending &&
         transitions((style, index) => (
           <animated.div
             style={style}
-            className="z-0 h-full flex flex-col place-content-center items-center"
+            className="z-0 flex flex-col font-serif place-content-center items-center py-0 sm:py-20"
           >
-            <p className="w-full sm:w-1/2 my-3 text-center text-xl font-sans">
+            <p className="w-2/3 sm:w-full text-center text-lg sm:text-xl text-gray-700">
               {data[index]["resumen"]}
             </p>
 
-            <div className="flex h-1/3 py-7">
+            <div className="flex w-full py-7 px-10 sm:px-0 justify-center">
               <Img
                 styles="size-16 rounded-lg"
                 source={data[index]["img"]}
                 alt="img"
               />
-              <div className="flex-col px-8">
-                <h5 className="text-sky-700">{data[index]["nombre"]} </h5>
-                <h6>{data[index]["puesto"]}</h6>
+              <div className="flex-col px-6">
+                <h6 className="text-sky-800 text-sm sm:text-xl">
+                  {data[index]["nombre"]}{" "}
+                </h6>
+                <h6 className=" text-sm">{data[index]["puesto"]}</h6>
               </div>
             </div>
           </animated.div>

@@ -17,6 +17,8 @@ interface info {
 }
 
 const Navbar: FC<{ pathname: string }> = ({ pathname }) => {
+  console.log(pathname);
+
   const { data, isPending } = useGetData("/menuAzul");
 
   const showMenu = () => {
@@ -54,13 +56,15 @@ const Navbar: FC<{ pathname: string }> = ({ pathname }) => {
                 items={value.SubMenus}
                 test={value.url}
                 baseUrl={value.url}
+                key={value.id}
               />
             ) : (
               <a
                 href={`/${value.url}`}
                 className={`border-blue-600 ${
-                  pathname === value.url ? "border-b-2 text-blue-600" : ""
-                }hover:text-blue-600`}
+                  pathname === `/${value.url}` ? "border-b-2 text-blue-600" : ""
+                }hover:text-blue-600 transition-all ease-in-out duration-300`}
+                key={value.id}
               >
                 {value.nombre}
               </a>

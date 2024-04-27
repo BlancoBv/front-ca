@@ -31,18 +31,18 @@ export const prerender = false;
 <Layout title="Prueba">
   <CintaPage title="Post" url={"/post" + blogData?.url} />
   <section class="flex flex-col w-screen gap-4 p-6 sm:p-20">
-    <div class="text-center py-6" set:html={titulo} />
+    <div class="text-center py-4 font-sans font-semibold" set:html={titulo} />
     <div class="w-full">
       {
         imagen && (
           <Img
-            styles="size-3/4 rounded-lg float-none mx-auto sm:mx-0 sm:mr-2.5 sm:mb-2 sm:size-2/4 sm:float-left "
+            styles="size-3/4 rounded-lg float-none p-2 mx-auto sm:mx-0 sm:mr-2.5 sm:mb-2 sm:size-2/4 sm:float-left "
             source={imagen}
             alt={blogData.data.imagen.alt}
           />
         )
       }
-      <div class="text-justify" set:html={contenido} />
+      <div class="text-justify font-serif" set:html={contenido} />
     </div>
   </section>
 </Layout>

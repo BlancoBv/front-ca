@@ -6,7 +6,7 @@ const PostContainer: FC = () => {
   const { data, isPending } = useGetData("/post");
 
   return (
-    <section className="flex justify-evenly flex-wrap p-2">
+    <section className="flex justify-evenly flex-wrap p-2 sm:p-8">
       {!isPending &&
         data.map(
           (el: {

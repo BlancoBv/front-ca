@@ -28,8 +28,8 @@ export const prerender = false;
 
 <Layout title="Prueba">
   <CintaPage title="Post" url={"/post" + blogData?.url} />
-  <section class="flex flex-col w-screen gap-4 p-6 sm:p-20">
-    <div class="text-center py-4 font-sans font-semibold" set:html={titulo} />
+  <section class="flex flex-col w-screen gap-4 px-6 py-10 sm:px-44">
+    <div class="text-center py-5 font-sans font-semibold" set:html={titulo} />
     <div class="w-full">
       {
         imagen && (

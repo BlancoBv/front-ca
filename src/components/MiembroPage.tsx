@@ -48,8 +48,8 @@ const MiembroPage: FC<{
   ];
 
   return (
-    <section className=" flex flex-col w-screen py-10 px-6 sm:px-40">
-      <div className="flex justify-center flex-col sm:flex-row">
+    <section className=" flex flex-col w-screen py-10 px-6 sm:px-44">
+      <div className="flex justify-center flex-col sm:flex-row font-sans">
         <Img
           source={datos.img}
           alt={datos.nombre}
@@ -57,15 +57,15 @@ const MiembroPage: FC<{
         />
         <div className="flex flex-col sm:pl-8">
           <div className="flex flex-col border-b-2 border-b-gray-300 py-3">
-            <h5 className="">{`${datos.nombre} ${datos.apepat} ${datos.apemat}`}</h5>
-            <h6 className="">{datos.puesto}</h6>
+            <h5 className=" font-semibold">{`${datos.nombre} ${datos.apepat} ${datos.apemat}`}</h5>
+            <h6 className=" text-sm">{datos.puesto}</h6>
           </div>
           <div className="flex flex-col border-b-2 border-b-gray-300 py-3">
             {datos.contacto.hasOwnProperty("contactos") &&
               datos.contacto.contactos.map((el: string) => (
                 <a
                   href={`mailto:${el}`}
-                  className="text-gray-500 hover:text-blue-500"
+                  className="text-gray-500 hover:text-blue-500 text-sm"
                   key={el}
                 >
                   {el}
@@ -75,7 +75,7 @@ const MiembroPage: FC<{
           <div className="flex py-3">
             <p className="text-justify">{datos.resumen}</p>
           </div>
-          <div className=" flex space-x-5">
+          <div className=" flex space-x-5 py-2">
             <a href="">
               <FontAwesomeIcon
                 className=" 
@@ -87,7 +87,7 @@ const MiembroPage: FC<{
             <a href="">
               <FontAwesomeIcon
                 className=" 
-                size-9
+                size-9 
                 "
                 icon={faXTwitter}
               />
@@ -95,7 +95,7 @@ const MiembroPage: FC<{
             <a href="">
               <FontAwesomeIcon
                 className=" 
-                size-9
+                size-9 
                 "
                 icon={faLinkedin}
               />

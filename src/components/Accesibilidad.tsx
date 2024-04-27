@@ -1,6 +1,11 @@
-import { useState, type FC } from "react";
+import { useState, type FC, type ReactNode } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUniversalAccess } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowPointer,
+  faFont,
+  faLink,
+  faUniversalAccess,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Accesibilidad: FC = () => {
   const focusAllLinks = (state: boolean) => {
@@ -34,33 +39,45 @@ const Accesibilidad: FC = () => {
   };
 
   return (
-    <div className="group fixed top-2/4 end-0 translate-y-1/2 z-50">
-      <button>
-        <FontAwesomeIcon className="size-10" icon={faUniversalAccess} />
-      </button>
+    <div className="group fixed top-2/4 end-0 translate-y-1/2 z-50 p-2">
+      <FontAwesomeIcon
+        className="size-14 text-blue-600"
+        icon={faUniversalAccess}
+        title="Accesibilidad"
+      />
 
-      {/* <button onClick={focusAllLinks}>Hiperviculos</button> */}
-      <AccessButton action={focusAllLinks} label="Hipervinculos" />
-      <AccessButton action={changeCursor} label="Cursor" />
-      <AccessButton action={changeFontSize} label="Fuente" />
+      <div className="flex flex-col absolute top-2/4 -translate-y-2/4  scale-0 invisible group-hover:visible group-hover:scale-100 group-hover:-translate-x-full  transition-all ease-in-out duration-300">
+        <AccessButton action={focusAllLinks}>
+          <FontAwesomeIcon icon={faLink} className="size-10" />
+        </AccessButton>
+        <AccessButton action={changeCursor}>
+          <FontAwesomeIcon icon={faArrowPointer} className="size-10" />
+        </AccessButton>
+        <AccessButton action={changeFontSize}>
+          <FontAwesomeIcon icon={faFont} className="size-10" />
+        </AccessButton>
+      </div>
     </div>
   );
 };
 
-const AccessButton: FC<{ action: any; label: string }> = ({
-  action,
-  label,
-}) => {
+const AccessButton: FC<{
+  action: any;
+  label?: string;
+  children?: ReactNode;
+}> = ({ action, label, children }) => {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   return (
     <button
+      className={`odd:ms-5 hover:text-blue-400 ${isActive && "text-blue-400"}`}
       onClick={() => {
         action(isActive);
         setIsActive(!isActive);
       }}
     >
       {label}
+      {children}
     </button>
   );
 };

@@ -19,11 +19,11 @@ const Tablespersonal: FC<{
         <tbody>
           {datos.map((row: any) => (
             <tr
-              className="bg-neutral-200 hover:bg-cyan-500 hover:text-white"
+              className="bg-neutral-200 hover:bg-cyan-500 hover:text-white cursor-pointer"
               onClick={() => {
                 window.open(row.url, "__blank");
               }}
-              role="button"
+              title="Abrir proyecto/articulo"
             >
               {columnas.map((col) => (
                 <td className="text-center">{col.selector(row)}</td>

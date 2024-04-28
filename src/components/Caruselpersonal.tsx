@@ -18,7 +18,7 @@ const Caruselpersonal: FC = () => {
     leave: { opacity: 1, transform: "translate3d(-100%,0,-100px)" },
     onRest: (_a, _b, item) => {
       if (index === item) {
-        setIndex(index === data.length - 1 ? 0 : index + 0);
+        setIndex(index === data.length - 1 ? 0 : index + 1);
       }
     },
     exitBeforeEnter: true,

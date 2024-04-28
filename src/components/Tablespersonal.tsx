@@ -6,11 +6,11 @@ const Tablespersonal: FC<{
   columnas: { name: string; selector: (name: any) => string }[];
 }> = ({ titulo, datos, columnas }) => {
   return (
-    <div className="flex flex-col w-full">
-      <h3 className="pb-2">{titulo}</h3>
-      <table className="table-fixed text-sm w-full">
-        <thead className="h-10">
-          <tr className="bg-cyan-500 text-white">
+    <div className="flex flex-col w-full py-8">
+      <h3 className="pb-4">{titulo}</h3>
+      <table className="table-fixed text-sm w-full font-sans">
+        <thead className="h-12">
+          <tr className="bg-cyan-500 text-white text-lg">
             {columnas.map((el) => (
               <th className="text-center">{el.name}</th>
             ))}
@@ -26,7 +26,7 @@ const Tablespersonal: FC<{
               title="Abrir proyecto/articulo"
             >
               {columnas.map((col) => (
-                <td className="text-center">{col.selector(row)}</td>
+                <td className="text-center p-3">{col.selector(row)}</td>
               ))}
             </tr>
           ))}

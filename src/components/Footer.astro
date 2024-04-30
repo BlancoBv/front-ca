@@ -1,8 +1,11 @@
 ---
-
+import { faFacebook, faFacebookF, faInstagram, faSquareTwitter, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 ---
 
-<footer class="py-4 px-4 w-full">
+
+<!-- <footer class="py-4 px-4 w-full">
   <div class="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 border-b">
     <div class="border-r">
       <h2 class="text-lg font-semibold pb-4 text-center">Ubicación</h2>
@@ -139,4 +142,77 @@
       </div>
     </div>
   </div>
+</footer> -->
+
+<footer class="py-4 px-4 mx-auto">
+  <div class="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 border-b">
+      <div class="border-r">
+        <h2 class="text-lg font-semibold pb-4 text-center">Ubicación</h2>
+        <div class="pl-4">
+          <a class="hover:text-blue-400 transition-colors duration-300" href="https://www.google.com/maps/place/TecNM+-+Campus+de+los+Ríos/@17.8291423,-91.5322722,15z/data=!4m6!3m5!1s0x85f3c2bd7c92f7f1:0xd2dcbb5e00b64eab!8m2!3d17.8291423!4d-91.5322722!16s%2Fg%2F11f4tzcln4?entry=ttu">
+              <h5 class="pt-2 font-sans">Dirección TecNM campus rios</h3>
+          </a>
+          <h5 class="pt-2 pb-2 font-sans">TEL. 934 115 1443</h3>
+        </div>
+        <div class="lg:col-span-1 flex items-center pt-4">
+            <div class="flex space-x-4 pr-2 pb-4">
+                <a href="https://www.facebook.com" class="hover:text-blue-400 transition-colors duration-300">
+                  <FontAwesomeIcon
+                  className="size-8"
+                  icon={faFacebookF}
+                  />
+              </a>
+          </div>
+          <div class="flex space-x-4 pr-2 pb-4">
+              <a href="https://twitter.com" class="hover:text-blue-400 transition-colors duration-300">
+                <FontAwesomeIcon
+                  className="size-8"
+                  icon={faTwitter}
+                  />
+              </a>
+          </div>
+          <div class="flex space-x-4 pr-2 pb-4">
+              <a href="https://www.youtube.com" class="hover:text-blue-400 transition-colors duration-300">
+                <FontAwesomeIcon
+                  className="size-8"
+                  icon={faYoutube}
+                  />
+              </a>
+          </div>
+          <div class="flex space-x-4 pr-2 pb-4">
+              <a href="https://www.instagram.com" class="hover:text-blue-400 transition-colors duration-300">
+                <FontAwesomeIcon
+                className="size-8"
+                icon={faInstagram}
+                />
+              </a>
+          </div>
+      </div>
+  </div>
+      <div class="border-r">
+        <h2 class="text-lg font-semibold hover:text-blue-400 transition-colors duration-300 pb-4 text-center">
+          <a href="https://www.uv.mx/transparencia/">Transparencia</a>
+        </h2>
+        <h5 class="font-sans">Información financiera presupuestal</h5>
+        <h5 class="font-sans">Gobierno Abierto</h5>
+        <h5 class="font-sans">Avisos de Privacidad</h5>
+      </div>
+      <div class="pb-4">
+        <h2 class="text-lg font-semibold pb-4 text-center">Datos generales</h2>
+      <h5 class="font-sans">Correo: cdistribuido2018@gmail.com</h5>
+      <h5 class="font-sans">Dirección: Km. 3 carretera Balancán-Villahermosa, Balancán, Tabasco C.P.86930</h5>
+      </div>
+    </div>
+    <div class="container mx-auto text-center pt-4 flex justify-evenly">
+          <h6 class="font-semibold">@ 2023 Cuerpo Académico - Computo Distribuido ®</h2>
+          <div class="font-semibold  hover:text-blue-400 transition-colors duration-300 ">
+              <a href="mailto:cdistribuido2018@gmail.com">
+                <FontAwesomeIcon
+                className="size-8"
+                icon={faMailBulk}
+                />
+                <p>Buzón</p>
+              </a>
+          </div>
+    </div>
 </footer>

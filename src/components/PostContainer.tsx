@@ -23,6 +23,29 @@ const PostContainer: FC = () => {
             />
           )
         )}
+
+      {isPending && (
+        <>
+          <div className="w-80 h-96 border shadow rounded-lg flex flex-col items-center py-3 px-2 space-y-5 font-sans mb-5 animate-pulse">
+            <div className="text-center font-semibold h-5 rounded-lg w-3/4 bg-slate-500" />
+            <div className="text-center font-semibold h-5 rounded-lg w-3/4 bg-slate-500" />
+            <div className="aspect-square size-52 rounded-lg object-cover bg-slate-500" />
+            <div className=" text-white rounded-xl p-2 bg-slate-500 w-20 h-10  hover:scale-105 transition-all ease-in-out duration-300" />
+          </div>
+          <div className="w-80 h-96 border shadow rounded-lg flex flex-col items-center py-3 px-2 space-y-5 font-sans mb-5 animate-pulse">
+            <div className="text-center font-semibold h-5 rounded-lg w-3/4 bg-slate-500" />
+            <div className="text-center font-semibold h-5 rounded-lg w-3/4 bg-slate-500" />
+            <div className="aspect-square size-52 rounded-lg object-cover bg-slate-500" />
+            <div className=" text-white rounded-xl p-2 bg-slate-500 w-20 h-10  hover:scale-105 transition-all ease-in-out duration-300" />
+          </div>
+          <div className="w-80 h-96 border shadow rounded-lg flex flex-col items-center py-3 px-2 space-y-5 font-sans mb-5 animate-pulse">
+            <div className="text-center font-semibold h-5 rounded-lg w-3/4 bg-slate-500" />
+            <div className="text-center font-semibold h-5 rounded-lg w-3/4 bg-slate-500" />
+            <div className="aspect-square size-52 rounded-lg object-cover bg-slate-500" />
+            <div className=" text-white rounded-xl p-2 bg-slate-500 w-20 h-10  hover:scale-105 transition-all ease-in-out duration-300" />
+          </div>
+        </>
+      )}
     </section>
   );
 };

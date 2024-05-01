@@ -48,14 +48,14 @@ const MiembroPage: FC<{
   ];
 
   return (
-    <section className=" flex flex-col w-screen py-10 px-6 sm:px-40">
-      <div className="flex justify-center flex-col sm:flex-row">
-        <Img
-          source={datos.img}
+    <section className="flex flex-col">
+      <div className="flex justify-center items-center flex-col sm:flex-row">
+        <img
+          src={datos.img}
           alt={datos.nombre}
-          styles="size-70 rounded-lg sm:size-40"
+          className="size-3/4 object-cover rounded-lg sm:size-1/4 aspect-square sm:sticky sm:top-40 "
         />
-        <div className="flex flex-col sm:pl-8">
+        <div className="flex flex-col sm:pl-8 sm:w-3/4">
           <div className="flex flex-col border-b-2 border-b-gray-300 py-3">
             <h5 className="">{`${datos.nombre} ${datos.apepat} ${datos.apemat}`}</h5>
             <h6 className="">{datos.puesto}</h6>

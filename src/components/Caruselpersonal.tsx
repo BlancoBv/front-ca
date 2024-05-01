@@ -30,7 +30,7 @@ const Caruselpersonal: FC = () => {
   }, [index]);
 
   return (
-    <section className="aspect-video relative overflow-hidden w-full my-8 sm:m-0 h-full px-6 sm:px-40">
+    <div className="relative overflow-hidden w-full my-8 sm:m-0 px-6 sm:px-40">
       {!isPending &&
         transitions((style, index) => (
           <animated.div
@@ -56,7 +56,7 @@ const Caruselpersonal: FC = () => {
             </div>
           </animated.div>
         ))}
-    </section>
+    </div>
   );
 };
 

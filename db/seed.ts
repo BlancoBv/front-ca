@@ -97,7 +97,7 @@ export default async function seed() {
     {
       id: 3,
       nombre: "Lineas de investigación",
-      url: "lineas-investigación",
+      url: "lineas-investigacion",
       menu: 2,
     },
     { id: 4, nombre: "Fernando Pech May", url: "1", menu: 3 },

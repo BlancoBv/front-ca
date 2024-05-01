@@ -1,45 +1,84 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import CintaPage from "../../components/Cintapage.astro";
+const { pathname } = Astro.url;
 ---
 
-
 <Layout title="Líneas de investigación">
-  <CintaPage />
-<div class="flex flex-col py-10 px-6 sm:px-80">
+  <CintaPage title="Cuerpo academico" url={pathname} />
+  <section class="flex flex-col">
+    <div class="container mx-auto flex flex-col lg:flex-row gap-8 pt-10">
+      <div class="ms:pl-40 lg:order-1">
+        <div class="top-0 p-2 bg-white h-32 flex flex-col z-50 shadow-sm">
+          <img
+            src="/logoCA.png"
+            alt="Logo Cuerpo Academico"
+            width="350px"
+            style="size-70 rounded-lg sm:size-40"
+          />
+        </div>
+      </div>
+      <div class="lg:order-1">
+        <div class="mb-20">
+          <h4>Cuerpo Académico - Computo Distribuido</h4>
+          <span class="text-xs">En consolidación</span>
+          <div class="pt-6">
+            <h6 class="border-t">
+              Líneas de investigación: Sistemas Distribuidos y Base de Datos
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
 
-       <div class="container mx-auto flex flex-col lg:flex-row gap-8 pt-10">
-            <div class="ms:pl-40 lg:order-1">
-                 <div class=" top-0 p-2 bg-white h-32 flex flex-col z-50 shadow-sm">
-                      <img src="/logoCA.png" alt="Logo Cuerpo Academico" width="350px" style="size-70 rounded-lg sm:size-40"/>
-                    </div>
-               </div>
-               <div class="lg:order-1">
-                    <div class="mb-20">
-                         <h4> Cuerpo Académico - Computo Distribuido</h2>
-                              <span class="text-xs">En consolidación</span>
-                              <div class="pt-6">  
-                                   <h6 class="border-t">Líneas de investigación: Sistemas Distribuidos y Base de Datos</h6>
-                              </div>
-                         </div>
-                    </div>
-               </div>
-               
-               <div class="flex flex-col py=5">
-                    <h6 class="mb-3 font-semibold">Sistemas distribuidos</h6>
-                    <p class="font-sans text-justify">Esta línea de investigación se centra tanto en aspectos teóricos como prácticos y se caracteriza por ser un área amplia que ha permitido que la Línea de Generación Aplicación del Conocimiento (LGAC) se actualice constantemente. Actualmente las tecnologías de la información han evolucionado significativamente lo que hace necesario la adopción de nuevas tecnologías demandadas por el sector productivo y tecnológico. Las áreas del conocimiento exploradas en esta línea de investigación son:</p>
-               </div>
-               <div class="flex flex-col py-5">
-                    <h6 class="mb-3 font-semibold">Web semánticas</h6>
-                    <p class="font-sans text-justify">La web semántica en un área emergente y de gran uso ya que involucra la creación, administración y procesamiento de la información a través de distintos lenguajes y herramientas involucradas en la formalización del conocimiento. Con el fin de aportar en esta área, se desarrollarán proyectos, internos al CA, que abordarán temas relacionados al desarrollo de ontologías.</p>
-               </div>     
-               <div class="flex flex-col pt-5">
-                    <h6 class="mb-3 font-semibold">Procesamiento de lenguaje natural</h6>
-                    <p class="font-sans text-justify">El lenguaje natural ha resultado una actividad importante, siendo uno de los medios de comunicación entre personas y máquinas. Debido a esto, es necesario procesar el texto para su posterior. Actualmente existen distintas herramientas y enfoques que mejoran el procesamiento del lenguaje natural (PLN). Debido a la importancia de esta área, se requiere realizar nuevas estrategias y enfoques para la interpretación de la información.</p>
-               </div>     
-               <div class="flex flex-col py-5">
-                    <h6 class="mb-3 font-semibold">Recuperación de información</h6>
-                    <p class="font-sans text-justify">La Web semántica, el procesamiento de lenguaje natural y otras áreas requieren del mejoramiento de técnicas para la recuperación de información con la finalidad de obtener resultados y toma de decisiones más eficientes. En esta área se implementan modelos eficientes de búsqueda de información en colecciones de documentos que respondan a solicitudes específicas de información. Se desarrollarán proyectos para el análisis de distintas herramientas y técnicas para ser utilizadas en búsquedas ya sea por palabras clave o semánticamente.</p>
-               </div>     
- </div>
+    <div class="flex flex-col py=5">
+      <h6 class="mb-3 font-semibold">Sistemas distribuidos</h6>
+      <p class="font-sans text-justify">
+        Esta línea de investigación se centra tanto en aspectos teóricos como
+        prácticos y se caracteriza por ser un área amplia que ha permitido que
+        la Línea de Generación Aplicación del Conocimiento (LGAC) se actualice
+        constantemente. Actualmente las tecnologías de la información han
+        evolucionado significativamente lo que hace necesario la adopción de
+        nuevas tecnologías demandadas por el sector productivo y tecnológico.
+        Las áreas del conocimiento exploradas en esta línea de investigación
+        son:
+      </p>
+    </div>
+    <div class="flex flex-col py-5">
+      <h6 class="mb-3 font-semibold">Web semánticas</h6>
+      <p class="font-sans text-justify">
+        La web semántica en un área emergente y de gran uso ya que involucra la
+        creación, administración y procesamiento de la información a través de
+        distintos lenguajes y herramientas involucradas en la formalización del
+        conocimiento. Con el fin de aportar en esta área, se desarrollarán
+        proyectos, internos al CA, que abordarán temas relacionados al
+        desarrollo de ontologías.
+      </p>
+    </div>
+    <div class="flex flex-col pt-5">
+      <h6 class="mb-3 font-semibold">Procesamiento de lenguaje natural</h6>
+      <p class="font-sans text-justify">
+        El lenguaje natural ha resultado una actividad importante, siendo uno de
+        los medios de comunicación entre personas y máquinas. Debido a esto, es
+        necesario procesar el texto para su posterior. Actualmente existen
+        distintas herramientas y enfoques que mejoran el procesamiento del
+        lenguaje natural (PLN). Debido a la importancia de esta área, se
+        requiere realizar nuevas estrategias y enfoques para la interpretación
+        de la información.
+      </p>
+    </div>
+    <div class="flex flex-col py-5">
+      <h6 class="mb-3 font-semibold">Recuperación de información</h6>
+      <p class="font-sans text-justify">
+        La Web semántica, el procesamiento de lenguaje natural y otras áreas
+        requieren del mejoramiento de técnicas para la recuperación de
+        información con la finalidad de obtener resultados y toma de decisiones
+        más eficientes. En esta área se implementan modelos eficientes de
+        búsqueda de información en colecciones de documentos que respondan a
+        solicitudes específicas de información. Se desarrollarán proyectos para
+        el análisis de distintas herramientas y técnicas para ser utilizadas en
+        búsquedas ya sea por palabras clave o semánticamente.
+      </p>
+    </div>
+  </section>
 </Layout>

@@ -70,11 +70,23 @@ const RedesSociales = defineTable({
 
 const Usuario = defineTable({
   columns: {
-    user: column.text({ primaryKey: true }),
-    nombre: column.text(),
-    password: column.text(),
-    rol: column.text(),
+    id: column.text({ primaryKey: true, optional: false, unique: true }),
+    user: column.text({ unique: true, optional: false }),
+    password: column.text({ optional: true }),
+    github_id: column.text({ optional: true, unique: true }),
+    rol: column.text({ default: "editor" }),
     createdAt: column.date({ default: NOW }),
+  },
+});
+
+const Session = defineTable({
+  columns: {
+    id: column.text({ optional: false, unique: true }),
+    userId: column.text({
+      optional: false,
+      references: () => Usuario.columns.id,
+    }),
+    expiresAt: column.number({ optional: false }),
   },
 });
 
@@ -123,5 +135,6 @@ export default defineDb({
     RedesSociales,
     Proyectos,
     Publicaciones,
+    Session,
   },
 });

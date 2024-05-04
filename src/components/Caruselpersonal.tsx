@@ -1,4 +1,4 @@
-import React, { type FC, useEffect, useState } from "react";
+import { type FC, useEffect, useState } from "react";
 import useFetchData from "../hooks/useFetchData";
 import Img from "./Img";
 import { useSpringRef, useTransition, animated } from "@react-spring/web";
@@ -22,7 +22,7 @@ const Caruselpersonal: FC = () => {
       }
     },
     exitBeforeEnter: true,
-    config: { duration: 2500 },
+    config: { duration: 2500, friction: 50, mass: 300 },
   });
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Caruselpersonal: FC = () => {
   }, [index]);
 
   return (
-    <div className="relative overflow-hidden w-full my-8 sm:m-0 px-6 sm:px-40">
+    <div className="relative overflow-hidden h-96 w-full my-8 sm:m-0 px-6 sm:px-40">
       {!isPending &&
         transitions((style, index) => (
           <animated.div

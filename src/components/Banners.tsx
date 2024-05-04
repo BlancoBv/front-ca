@@ -1,4 +1,4 @@
-import React, { type FC, useEffect, useState } from "react";
+import { type FC, useEffect, useState } from "react";
 import useGetData from "../hooks/useGetData";
 import Img from "./Img";
 import { useSpringRef, useTransition, animated } from "@react-spring/web";
@@ -6,20 +6,35 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Banners: FC = () => {
+  const TIMER_INTERVAL = 3000;
+
   const [index, setIndex] = useState<number>(0);
+  const [timer, setTimer] = useState<any>(null);
   const { data, isPending, error } = useGetData("/banners");
 
   const ref = useSpringRef();
 
+  const autoClick = () => {
+    const element = document.getElementById("next-banner");
+    element.click();
+  };
+
   const transitions = useTransition(index, {
     ref,
     keys: null,
-    from: { opacity: 1, transform: "translate3d(100%,0,-100px)" },
-    enter: { opacity: 1, transform: "translate3d(0%,0,0px)" },
-    leave: { opacity: 0 },
+    from: { opacity: 1, transform: "translateZ(30px)" },
+    enter: { opacity: 1, transform: "translateZ(100px)" },
+    leave: { opacity: 0, transform: "translate3d(100%,0,100px)" },
     exitBeforeEnter: true,
     config: {
       duration: 500,
+    },
+    onRest: () => {
+      if (!timer) {
+        setTimeout(() => {
+          autoClick();
+        }, TIMER_INTERVAL);
+      } //realiza el primer click para inicializar el intervalo
     },
   });
   const previousCard = () => {
@@ -29,18 +44,31 @@ const Banners: FC = () => {
       }
       return (prev - 1) % data.length;
     });
+    clearInterval(timer);
+    setTimer(setInterval(autoClick, TIMER_INTERVAL));
   };
 
   const nextCard = () => {
     setIndex((prev) => (prev + 1) % data.length);
+    clearInterval(timer);
+    setTimer(setInterval(autoClick, TIMER_INTERVAL));
   };
 
   useEffect(() => {
     ref.start();
   }, [index]);
 
+  useEffect(() => {
+    return () => {
+      clearInterval(timer);
+    }; //busca cambioes en el intervalo, para limpiar el mismo
+  }, [timer]);
+
   return (
-    <div className="relative overflow-hidden w-full h-60 sm:h-3/4">
+    <div
+      className="relative overflow-hidden w-full h-60 sm:h-3/4"
+      style={{ perspective: "1000px" }}
+    >
       {!isPending &&
         transitions((style, index) => (
           <animated.div style={style} className="z-0 h-full w-full relative">
@@ -65,6 +93,7 @@ const Banners: FC = () => {
       <button
         className="absolute origin-center top-2/4 right-0"
         onClick={nextCard}
+        id="next-banner"
       >
         <FontAwesomeIcon className="size-14" icon={faAngleRight} />
       </button>

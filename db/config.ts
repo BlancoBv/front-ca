@@ -71,7 +71,7 @@ const RedesSociales = defineTable({
 const Usuario = defineTable({
   columns: {
     id: column.text({ primaryKey: true, optional: false, unique: true }),
-    user: column.text({ unique: true, optional: false }),
+    username: column.text({ unique: true, optional: false }),
     password: column.text({ optional: true }),
     github_id: column.text({ optional: true, unique: true }),
     rol: column.text({ default: "editor" }),

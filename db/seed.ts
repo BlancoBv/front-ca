@@ -15,20 +15,14 @@ import {
 
 export default async function seed() {
   //Insertar miembros
-  /* await db.insert(Usuario).values([
+  await db.insert(Usuario).values([
     {
-      user: "jose@academico.com",
-      nombre: "Jose Luis",
-      password: "123456789",
-      rol: "editor",
+      id: "2dg33zwegpk30ok",
+      username: "jose@academico.com",
+      password:
+        "$argon2id$v=19$m=19456,t=2,p=1$efmiOCzg9hQsjyQG3wXdkg$5uA6ytilCxbYB6ZoxhQNe34nuMlnv0FiYm0JpEPOGSw",
     },
-    {
-      user: "david@academico.com",
-      nombre: "David Antonio",
-      password: "123456789",
-      rol: "editor",
-    },
-  ]); */
+  ]);
   //Insertar miembros
   await db.insert(Miembros).values([
     {

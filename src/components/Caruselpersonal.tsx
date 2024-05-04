@@ -18,7 +18,7 @@ const Caruselpersonal: FC = () => {
     leave: { opacity: 1, transform: "translate3d(-100%,0,-100px)" },
     onRest: (_a, _b, item) => {
       if (index === item) {
-        setIndex(index === data.length - 1 ? 0 : index + 0);
+        setIndex(index === data.length - 1 ? 0 : index + 1);
       }
     },
     exitBeforeEnter: true,
@@ -30,7 +30,7 @@ const Caruselpersonal: FC = () => {
   }, [index]);
 
   return (
-    <section className="aspect-video relative overflow-hidden w-full my-8 sm:m-0 h-full px-6 sm:px-40">
+    <div className="relative overflow-hidden w-full my-8 sm:m-0 px-6 sm:px-40">
       {!isPending &&
         transitions((style, index) => (
           <animated.div
@@ -56,7 +56,7 @@ const Caruselpersonal: FC = () => {
             </div>
           </animated.div>
         ))}
-    </section>
+    </div>
   );
 };
 

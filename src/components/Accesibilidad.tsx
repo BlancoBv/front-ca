@@ -41,7 +41,7 @@ const Accesibilidad: FC = () => {
   return (
     <div className="group fixed top-2/4 end-0 translate-y-1/2 z-50 p-2">
       <FontAwesomeIcon
-        className="size-14 text-blue-600"
+        className="size-14 text-blue-600 rounded-full"
         icon={faUniversalAccess}
         title="Accesibilidad"
       />

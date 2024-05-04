@@ -41,7 +41,7 @@ export const urlMain = "http://localhost:4321";
     <Accesibilidad client:load />
     <slot />
 
-    <!-- <Footer /> -->
+    <Footer />
 
     <style is:global>
       @tailwind base;
@@ -49,6 +49,12 @@ export const urlMain = "http://localhost:4321";
       @tailwind utilities;
 
       @layer base {
+        ul {
+          @apply list-disc list-inside ml-2;
+        }
+        ol {
+          @apply list-decimal list-inside ml-2;
+        }
         h1 {
           @apply text-6xl;
         }
@@ -107,6 +113,10 @@ export const urlMain = "http://localhost:4321";
 
       section {
         min-height: 500px;
+        padding: 5rem;
+        @media (max-width: 681px) {
+          padding: 2rem;
+        }
       }
 
       .main-nav {
@@ -137,6 +147,13 @@ export const urlMain = "http://localhost:4321";
       }
       .make-invisible {
         right: -50vw;
+      }
+      .block-img img {
+        object-fit: cover;
+        border-radius: 1.5rem;
+        @media (min-width: 682px) {
+          margin-inline: auto;
+        }
       }
     </style>
   </body>

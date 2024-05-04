@@ -11,7 +11,7 @@ const Menudropdown = ({ name, items, test, baseUrl }: Props) => {
   return (
     <div className="relative inline-block text-left group">
       <span
-        className={`inline-flex items-center justify-center text-white sm:px-4 sm:text-black transition duration-150 ease-in-out hover:text-blue-600 border-blue-600 ${
+        className={`inline-flex items-center justify-center text-white sm:px-4 sm:text-black hover:text-blue-600 border-blue-600 transition-all ease-in-out duration-300 ${
           regExp(test, pathname) ? "border-b-2 text-blue-600" : ""
         }`}
       >

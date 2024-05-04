@@ -8,11 +8,27 @@ import {
   SubMenuAzul,
   Proyectos,
   Publicaciones,
+  Usuario,
 } from "astro:db";
 
 //Todos estos datos son de prueba, los datos reales son cuando el proyecto se compila y se conecta a astro studio db con mi usuario de github jlcabrera02
 
 export default async function seed() {
+  //Insertar miembros
+  /* await db.insert(Usuario).values([
+    {
+      user: "jose@academico.com",
+      nombre: "Jose Luis",
+      password: "123456789",
+      rol: "editor",
+    },
+    {
+      user: "david@academico.com",
+      nombre: "David Antonio",
+      password: "123456789",
+      rol: "editor",
+    },
+  ]); */
   //Insertar miembros
   await db.insert(Miembros).values([
     {

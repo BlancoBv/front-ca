@@ -2,13 +2,17 @@
 import Layout from "../layouts/Layout.astro";
 export const prerender = false;
 const user = Astro.locals.user;
+if(!user){
+  return Astro.redirect('/login');
+}
 ---
 
-<Layout title="Iniciar sesion">
+<Layout title="Crear usuario">
   <section class="flex justify-evenly items-center">
-      {!user ? <form class="h-full shadow-lg p-2  rounded-lg flex flex-col" method="POST"
-            action="/api/login">
+      <form class="h-full shadow-lg p-2  rounded-lg flex flex-col" method="POST"
+            action="/api/signup">
         <img src={"/img/logoCA.png"} alt="LogoCA" />
+        <h4>Crear usuario</h4>  
         <div>
           <label class="block mt-2 text-sm font-medium text-dark-900 dark:text-dark">
             Nombre de usuario
@@ -30,15 +34,8 @@ const user = Astro.locals.user;
           />
         </div>
         <div class="">
-          <button class="bg-blue-900 rounded hover:bg-blue-800 active:bg-blue-700 text-white p-1 mt-2 mx-auto block w-full rounded">Ingresar</button>
+          <button class="bg-blue-900 rounded hover:bg-blue-800 active:bg-blue-700 text-white p-1 mt-2 mx-auto block w-full rounded">Crear usuario</button>
         </div>
       </form>
-:
-      <form method="POST" action="/api/logout">
-        <p><b>Usuario:</b> {user.username}</p>
-          <button class="bg-blue-800 rounded hover:bg-blue-900 active:bg-blue-700 text-white p-1 mt-2 mx-auto block w-full rounded">Cerrar sessión</button>
-      </form>}
-
     </section>
-
 </Layout>

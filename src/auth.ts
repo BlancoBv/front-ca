@@ -4,6 +4,8 @@ import { db, Session, Usuario } from "astro:db";
 import { GitHub } from "arctic";
 const adapter = new DrizzleSQLiteAdapter(db as any, Session, Usuario); // your adapter
 
+export const prerender = false;
+
 export const lucia = new Lucia(adapter, {
   sessionCookie: {
     attributes: {

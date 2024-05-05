@@ -7,5 +7,7 @@ const { pathname } = Astro.url;
 
 <Layout title="Todos los post">
   <Cintapage title="Eventos" url={pathname} />
-  <PostContainer client:visible />
+  <section class="flex justify-evenly flex-wrap p-2 sm:p-8 relative">
+    <PostContainer client:only="react" />
+  </section>
 </Layout>

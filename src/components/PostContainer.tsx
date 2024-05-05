@@ -1,14 +1,19 @@
-import type { FC } from "react";
+import { useState, type FC } from "react";
 import useGetData from "../hooks/useGetData";
 import PostCard from "./PostCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const PostContainer: FC = () => {
-  const { data, isPending } = useGetData("/post");
+  const [page, setPage] = useState<number>(1);
+
+  const { data, isPending, error } = useGetData(`/post/paginated/${page}`);
 
   return (
-    <section className="flex justify-evenly flex-wrap p-2 sm:p-8">
+    <>
       {!isPending &&
-        data.map(
+        !error &&
+        data.results.map(
           (el: {
             url: string;
             data: {
@@ -46,7 +51,29 @@ const PostContainer: FC = () => {
           </div>
         </>
       )}
-    </section>
+      {!isPending && error && <div>Sin contenido </div>}
+      {!isPending && !error && (
+        <div className="absolute bottom-0 flex gap-2 items-center">
+          <button
+            className="rounded-full scale-90 bg-blue-600 origin-center top-2/4 right-0 enabled:hover:scale-100 disabled:opacity-50 size-14 transition-transform ease-in-out duration-300 text-white"
+            onClick={() => setPage((prev) => prev - 1)}
+            disabled={page <= 1}
+          >
+            <FontAwesomeIcon className=" size-full" icon={faAngleLeft} />
+          </button>
+          <p>
+            {page} / {data.total_pages}{" "}
+          </p>
+          <button
+            className="rounded-full scale-90 bg-blue-600 origin-center top-2/4 right-0 enabled:hover:scale-100 disabled:opacity-50 size-14 transition-transform ease-in-out duration-300 text-white"
+            onClick={() => setPage((prev) => prev + 1)}
+            disabled={page === data.total_pages}
+          >
+            <FontAwesomeIcon className="size-14" icon={faAngleRight} />
+          </button>
+        </div>
+      )}
+    </>
   );
 };
 export default PostContainer;

@@ -8,8 +8,12 @@ const client = prismic.createClient(API_ENDPOINT, {
   accessToken: TOKEN,
 });
 
-export const getPost = () => {
+export const getAllPost = () => {
   return client.getAllByType("post");
+};
+
+export const getPaginatedPost = (page: number) => {
+  return client.getByType("post", { pageSize: 10, page });
 };
 
 export const getPostByID = (id: string) => {

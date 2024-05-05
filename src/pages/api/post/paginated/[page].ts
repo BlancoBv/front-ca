@@ -1,10 +1,11 @@
-import { getAllPost } from "../../../utils/prismicFetch";
+import { getPaginatedPost } from "../../../../utils/prismicFetch";
 
 export const prerender = false;
 
-export async function GET() {
+export async function GET({ params }: any) {
+  const { page } = params;
   try {
-    const res = await getAllPost();
+    const res = await getPaginatedPost(Number(page));
     return new Response(JSON.stringify(res), {
       status: 200,
       headers: {

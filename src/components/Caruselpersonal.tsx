@@ -13,16 +13,23 @@ const Caruselpersonal: FC = () => {
   const transitions = useTransition(index, {
     ref,
     keys: null,
-    from: { opacity: 1, transform: "translate3d(100%,0,-100px)" },
-    enter: { opacity: 1, transform: "translate3d(0px,0,0px)" },
-    leave: { opacity: 1, transform: "translate3d(-100%,0,-100px)" },
+    from: {
+      opacity: 1,
+      transform: "translate3d(100%,0,-100px) rotateY(50deg)",
+    },
+    enter: { opacity: 1, transform: "translate3d(0px,0,0px) rotateY(0deg)" },
+    leave: {
+      opacity: 0,
+      transform: "translate3d(-100%,0,0) rotateY(0deg)",
+    },
     onRest: (_a, _b, item) => {
       if (index === item) {
         setIndex(index === data.length - 1 ? 0 : index + 1);
       }
     },
     exitBeforeEnter: true,
-    config: { duration: 2500, friction: 50, mass: 300 },
+    config: (_item, _index, state) =>
+      state === "leave" ? { duration: 5000 } : { duration: 2000 },
   });
 
   useEffect(() => {
@@ -30,12 +37,15 @@ const Caruselpersonal: FC = () => {
   }, [index]);
 
   return (
-    <div className="relative overflow-hidden h-96 w-full my-8 sm:m-0 px-6 sm:px-40">
+    <div
+      className="relative overflow-hidden h-96 w-full my-8 sm:m-0 px-6 sm:px-40"
+      style={{ perspective: "1000px" }}
+    >
       {!isPending &&
         transitions((style, index) => (
           <animated.div
             style={style}
-            className="z-0 flex flex-col font-serif place-content-center items-center py-0 sm:py-20"
+            className="z-0 flex flex-col font-serif place-content-center items-center py-0 sm:py-20 transform-gpu"
           >
             <p className="w-2/3 sm:w-full text-center text-lg sm:text-xl text-gray-700">
               {data[index]["resumen"]}

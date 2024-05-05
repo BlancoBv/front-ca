@@ -53,7 +53,7 @@ const MiembroPage: FC<{
         <img
           src={datos.img}
           alt={datos.nombre}
-          className="size-3/4 object-cover rounded-lg sm:size-1/4 aspect-square sm:sticky sm:top-40 "
+          className="size-3/4 object-cover rounded-lg sm:size-1/4 aspect-square "
         />
         <div className="flex flex-col sm:pl-8 sm:w-3/4">
           <div className="flex flex-col border-b-2 border-b-gray-300 py-3">

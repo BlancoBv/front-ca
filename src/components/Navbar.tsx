@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { useEffect, type FC } from "react";
 import useGetData from "../hooks/useGetData";
 import Menudropdown from "./Menudropdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -31,6 +31,19 @@ const Navbar: FC<{ pathname: string }> = ({ pathname }) => {
     element?.classList.remove("make-visible");
     element?.classList.add("make-invisible");
   };
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const navElement: any = document.getElementById("navigation");
+      const { scrollY } = window;
+
+      if (scrollY > 40) {
+        navElement.style.position = "fixed";
+      } else {
+        navElement.style = "";
+      }
+    });
+  }, []);
 
   return (
     <nav className="flex-grow flex flex-row justify-evenly h-10 main-nav">

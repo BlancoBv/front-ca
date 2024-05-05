@@ -1,8 +1,9 @@
-import type { FC } from "react";
+import { type FC } from "react";
 import useGetData from "../hooks/useGetData";
 
 const NavSuperior: FC = () => {
   const { data, isPending } = useGetData("/menuSuperior");
+
   return (
     <nav className="flex w-full justify-evenly items-center">
       {!isPending &&

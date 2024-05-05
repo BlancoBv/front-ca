@@ -23,13 +23,13 @@ const Navbar: FC<{ pathname: string }> = ({ pathname }) => {
 
   const showMenu = () => {
     const element = document.getElementById("container-nav");
-    element?.classList.remove("make-invisible");
-    element?.classList.add("make-visible");
+    element?.classList.remove("invisible");
+    element?.classList.add("visible");
   };
   const hideMenu = () => {
     const element = document.getElementById("container-nav");
-    element?.classList.remove("make-visible");
-    element?.classList.add("make-invisible");
+    element?.classList.remove("visible");
+    element?.classList.add("invisible");
   };
 
   useEffect(() => {
@@ -48,16 +48,16 @@ const Navbar: FC<{ pathname: string }> = ({ pathname }) => {
   return (
     <nav className="flex-grow flex flex-row justify-evenly h-10 main-nav">
       <FontAwesomeIcon
-        className="absolute right-2 size-10 text-2xl"
+        className="absolute right-2 size-10 text-2xl sm:invisible"
         icon={faBars}
         onClick={showMenu}
       />
       <div
         id="container-nav"
-        className="w-full p-6 sm:p-0 flex make-invisible text-white bg-blue-900 sm:bg-inherit sm:justify-evenly sm:text-black "
+        className="w-full p-6 sm:p-0 flex text-white bg-blue-900 sm:bg-inherit sm:justify-evenly sm:text-black invisible fixed h-screen top-0 flex-col sm:top-auto sm:relative sm:visible sm:h-auto sm:flex-row transition-all ease-in-out duration-300"
       >
         <FontAwesomeIcon
-          className="absolute end-4 size-10 text-2xl"
+          className="absolute end-4 size-10 text-2xl visible "
           icon={faXmark}
           onClick={hideMenu}
         />

@@ -122,7 +122,7 @@ export const urlMain = "http://localhost:4321";
         }
       }
 
-      .main-nav {
+      /* .main-nav {
         svg {
           visibility: collapse;
         }
@@ -132,7 +132,6 @@ export const urlMain = "http://localhost:4321";
           }
           #container-nav {
             position: fixed;
-            width: 50vw;
             height: 100vh;
             flex-direction: column;
             top: 0px;
@@ -145,12 +144,15 @@ export const urlMain = "http://localhost:4321";
         }
       }
       .make-visible {
+        width: 50vw;
+        opacity: 1;
         right: 0px;
-        transition: all 500ms ease-in-out;
       }
       .make-invisible {
-        right: -50vw;
-      }
+        opacity: 0;
+        width: 0px;
+        visibility: collapse;
+      } */
       .block-img img {
         object-fit: cover;
         border-radius: 1.5rem;

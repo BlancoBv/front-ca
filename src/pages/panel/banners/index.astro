@@ -1,0 +1,10 @@
+---
+import Panel from "../../../layouts/Panel.astro";
+import BannerList from "../../../components/banners/Lista";
+
+export const prerender = false;
+---
+
+<Panel>
+  <BannerList client:only="react" />
+</Panel>

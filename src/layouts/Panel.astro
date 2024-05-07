@@ -17,10 +17,20 @@ import { NavBarPanel } from "../components/Navbar";
     <div class="h-screen w-screen bg-white dark:bg-slate-950 dark:text-white">
       <header class="h-1/6 shadow dark:shadow-gray-800 dark:bg-gray-900">
         <h4>Panel de administración CA: Computo distribuido</h4>
+        <form method="POST" action="/api/logout">
+          <button
+            type="submit"
+            class="bg-blue-800 rounded hover:bg-blue-900 active:bg-blue-700 text-white p-1 mt-2 mx-auto block w-full"
+          >
+            Cerrar sessión
+          </button>
+        </form>
       </header>
       <div class="h-5/6 flex flex-col sm:flex-row p-2 gap-2">
         <NavBarPanel />
-        <slot />
+        <div class="flex flex-col w-5/6">
+          <slot />
+        </div>
       </div>
     </div>
 

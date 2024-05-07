@@ -90,10 +90,10 @@ const Navbar: FC<{ pathname: string }> = ({ pathname }) => {
 
 export const NavBarPanel: FC = () => {
   const options = [
-    { name: "Banners", route: "panel/banners", icon: "" },
-    { name: "Rutas de navegación", route: "panel/nav-control", icon: "" },
-    { name: "Otros enlaces", route: "panel/otros-enlaces", icon: "" },
-    { name: "Miembros", route: "panel/miembros", icon: "" },
+    { name: "Banners", route: "/panel/banners", icon: "" },
+    { name: "Rutas de navegación", route: "/panel/nav-control", icon: "" },
+    { name: "Otros enlaces", route: "/panel/otros-enlaces", icon: "" },
+    { name: "Miembros", route: "/panel/miembros", icon: "" },
   ];
   return (
     <nav className="sm:h-full sm:w-1/6 flex flex-row sm:flex-col justify-evenly content-center dark:bg-gray-900 rounded shadow dark:shadow-none snap-x overflow-x-auto">

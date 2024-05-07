@@ -21,7 +21,5 @@ export const prerender = false;
 
 <Layout title=`Miembro ${miembro}`>
   <CintaPage title="Miembro" url={pathname} />
-
   <MiembroPage id={miembro} datos={response[0]} client:visible />
-  <!-- <Tablespersonal id={miembro} /> -->
 </Layout>

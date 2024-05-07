@@ -83,10 +83,7 @@ const Banners: FC = () => {
   }, [timer]);
 
   return (
-    <div
-      className="relative overflow-hidden w-full h-60 sm:h-3/4"
-      style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
-    >
+    <>
       {!isPending &&
         transitions((style, index) => (
           <>
@@ -143,7 +140,7 @@ const Banners: FC = () => {
             />
           ))}
       </div>
-    </div>
+    </>
   );
 };
 

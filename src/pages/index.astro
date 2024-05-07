@@ -5,6 +5,16 @@ import Caruselpersonal from "../components/Caruselpersonal";
 ---
 
 <Layout title="CA - Computo Distribuido">
-  <Banners client:visible />
-  <Caruselpersonal client:visible />
+  <div
+    class="relative overflow-hidden w-full h-60 sm:h-3/4"
+    style={{ perspective: "1000px" }}
+  >
+    <Banners client:visible />
+  </div>
+  <div
+    class="relative overflow-hidden h-4/5 flex items-center sm:h-96 w-full my-8 sm:m-0 px-6"
+    style={{ perspective: "1000px" }}
+  >
+    <Caruselpersonal client:visible />
+  </div>
 </Layout>

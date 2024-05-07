@@ -1,6 +1,6 @@
 import Axios from "axios";
 
-export const urlMain = "http://192.168.100.4:4321";
+export const urlMain = "http://localhost:4321";
 //export const urlMain = "https://rios.tecnm.mx";
 export const multipartHeader = {
   headers: {

@@ -5,6 +5,17 @@ import { defineMiddleware } from "astro:middleware";
 export const prerender = false;
 
 export const onRequest = defineMiddleware(async (context, next) => {
+  const regExp = new RegExp(/\/panel.*/);
+  if (regExp.test(context.request.url)) {
+    const sessionId = context.cookies.get(lucia.sessionCookieName)?.value ?? "";
+
+    const { session } = await lucia.validateSession(sessionId);
+
+    if (!session) {
+      return context.redirect("/404");
+    }
+  }
+
   if (context.request.method !== "GET") {
     const originHeader = context.request.headers.get("Origin");
     const hostHeader = context.request.headers.get("Host");

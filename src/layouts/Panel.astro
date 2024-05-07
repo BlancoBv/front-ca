@@ -1,0 +1,111 @@
+---
+import ViewTransitions from "astro/components/ViewTransitions.astro";
+import { NavBarPanel } from "../components/Navbar";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Panel</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <div class="h-screen w-screen bg-white dark:bg-slate-950 dark:text-white">
+      <header class="h-1/6 shadow dark:shadow-gray-800 dark:bg-gray-900">
+        <h4>Panel de administración CA: Computo distribuido</h4>
+      </header>
+      <div class="h-5/6 flex flex-col sm:flex-row p-2 gap-2">
+        <NavBarPanel />
+        <slot />
+      </div>
+    </div>
+
+    <style is:global>
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+      @layer base {
+        ul {
+          @apply list-disc list-inside ml-2;
+        }
+        ol {
+          @apply list-decimal list-inside ml-2;
+        }
+        h1 {
+          @apply text-6xl;
+        }
+        h2 {
+          @apply text-5xl;
+        }
+        h3 {
+          @apply text-4xl;
+        }
+        h4 {
+          @apply text-3xl;
+        }
+        h5 {
+          @apply text-2xl;
+        }
+        h6 {
+          @apply text-xl;
+        }
+      }
+      :root {
+        --accent: 136, 58, 234;
+        --accent-light: 224, 204, 250;
+        --accent-dark: 49, 10, 101;
+        --accent-gradient: linear-gradient(
+          45deg,
+          rgb(var(--accent)),
+          rgb(var(--accent-light)) 30%,
+          white 60%
+        );
+      }
+      code {
+        font-family:
+          Menlo,
+          Monaco,
+          Lucida Console,
+          Liberation Mono,
+          DejaVu Sans Mono,
+          Bitstream Vera Sans Mono,
+          Courier New,
+          monospace;
+      }
+      body {
+        height: 100vh;
+        width: 100vw;
+        box-sizing: border-box;
+        font-family: "Bitter", sans-serif;
+        overflow-x: hidden;
+      }
+
+      /*  footer {
+        height: auto;
+        background-color: #f97316;
+        color: white;
+      }
+
+      section {
+        min-height: 500px;
+        padding: 5rem;
+        @media (max-width: 681px) {
+          padding: 2rem;
+        }
+      } */
+
+      .block-img img {
+        object-fit: cover;
+        border-radius: 1.5rem;
+        @media (min-width: 682px) {
+          margin-inline: auto;
+        }
+      }
+    </style>
+  </body>
+</html>

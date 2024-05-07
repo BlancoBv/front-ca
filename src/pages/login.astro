@@ -1,44 +1,65 @@
 ---
 import Layout from "../layouts/Layout.astro";
 export const prerender = false;
-const user = Astro.locals.user;
+const { user } = Astro.locals;
+
+if (user) {
+  return Astro.redirect("/panel");
+}
 ---
 
 <Layout title="Iniciar sesion">
   <section class="flex justify-evenly items-center">
-      {!user ? <form class="h-full shadow-lg p-2  rounded-lg flex flex-col" method="POST"
-            action="/api/login">
-        <img src={"/img/logoCA.png"} alt="LogoCA" />
-        <div>
-          <label class="block mt-2 text-sm font-medium text-dark-900 dark:text-dark">
-            Nombre de usuario
-          </label>
-          <input
-            type="text"
-            name="username"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          />
-        </div>
-        <div>
-          <label class="block mt-2 text-sm font-medium text-dark-900 dark:text-dark">
-            Contraseña
-          </label>
-          <input
+    <!-- <form method="POST" action="/api/logout">
+      <p>
+        <b>Usuario:</b>
+        {user.username}
+      </p>
+      <button
+        class="bg-blue-800 rounded hover:bg-blue-900 active:bg-blue-700 text-white p-1 mt-2 mx-auto block w-full rounded"
+      >
+        Cerrar sessión
+      </button>
+    </form> -->
+    <form
+      class="h-full shadow-lg p-2 rounded-lg flex flex-col"
+      method="POST"
+      action="/api/login"
+    >
+      <img src={"/img/logoCA.png"} alt="LogoCA" />
+      <div>
+        <label
+          class="block mt-2 text-sm font-medium text-dark-900 dark:text-dark"
+        >
+          Nombre de usuario
+        </label>
+        <input
+          required
+          type="text"
+          name="username"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </div>
+      <div>
+        <label
+          class="block mt-2 text-sm font-medium text-dark-900 dark:text-dark"
+        >
+          Contraseña
+        </label>
+        <input
+          required
           name="password"
-            type="password"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          />
-        </div>
-        <div class="">
-          <button class="bg-blue-900 rounded hover:bg-blue-800 active:bg-blue-700 text-white p-1 mt-2 mx-auto block w-full rounded">Ingresar</button>
-        </div>
-      </form>
-:
-      <form method="POST" action="/api/logout">
-        <p><b>Usuario:</b> {user.username}</p>
-          <button class="bg-blue-800 rounded hover:bg-blue-900 active:bg-blue-700 text-white p-1 mt-2 mx-auto block w-full rounded">Cerrar sessión</button>
-      </form>}
-
-    </section>
-
+          type="password"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </div>
+      <div class="">
+        <button
+          class="bg-blue-900 rounded hover:bg-blue-800 active:bg-blue-700 text-white p-1 mt-2 mx-auto block w-full rounded"
+        >
+          Ingresar
+        </button>
+      </div>
+    </form>
+  </section>
 </Layout>

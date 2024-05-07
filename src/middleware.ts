@@ -27,6 +27,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   }
 
   const { session, user } = await lucia.validateSession(sessionId);
+
   if (session && session.fresh) {
     const sessionCookie = lucia.createSessionCookie(session.id);
     context.cookies.set(
@@ -42,6 +43,9 @@ export const onRequest = defineMiddleware(async (context, next) => {
       sessionCookie.value,
       sessionCookie.attributes
     );
+    return new Response(JSON.stringify({ msg: "No autorizado" }), {
+      status: 403,
+    });
   }
   context.locals.session = session;
   context.locals.user = user;

@@ -21,6 +21,9 @@ export default async function seed() {
       username: "jose@academico.com",
       password:
         "$argon2id$v=19$m=19456,t=2,p=1$efmiOCzg9hQsjyQG3wXdkg$5uA6ytilCxbYB6ZoxhQNe34nuMlnv0FiYm0JpEPOGSw",
+      nombres: "jose",
+      apepat: "mendoza",
+      apemat: "arraiz",
     },
   ]);
   //Insertar miembros

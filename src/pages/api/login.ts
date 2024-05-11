@@ -2,6 +2,7 @@ import type { APIContext } from "astro";
 import { db, eq, Usuario } from "astro:db";
 import { Argon2id } from "oslo/password";
 import { lucia } from "../../auth";
+import fs from "node:fs";
 
 export const prerender = false;
 
@@ -57,6 +58,7 @@ export async function POST(context: APIContext): Promise<Response> {
 
   //Password is valid, user can log in
   const session = await lucia.createSession(foundUser.id, {});
+
   const sessionCookie = lucia.createSessionCookie(session.id);
   context.cookies.set(
     sessionCookie.name,

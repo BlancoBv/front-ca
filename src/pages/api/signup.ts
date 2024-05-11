@@ -11,6 +11,9 @@ export async function POST(context: APIContext): Promise<Response> {
   const formData = await context.request.formData();
   const username = formData.get("username");
   const password = formData.get("password");
+  const nombres = formData.get("nombres") as string;
+  const apepat = formData.get("apepat") as string;
+  const apemat = formData.get("apemat") as string;
   //Validate the form data
   if (!username || !password) {
     return new Response("Username and Password are required", { status: 400 });
@@ -35,6 +38,9 @@ export async function POST(context: APIContext): Promise<Response> {
       id: userId,
       username,
       password: hashedPassword,
+      nombres,
+      apepat,
+      apemat,
     },
   ]);
 
